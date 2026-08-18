@@ -1,18 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
-  <!-- Magnifying glass + arrow icon, scaled to fit 60px height -->
-  <g transform="translate(-24.7, -16.1) scale(0.43)">
-    <!-- Circle arc: center(90,82), r=54, from 4-oclock to 5-oclock going long way -->
-    <path d="M 135 107 A 54 54 0 1 0 115 128"
-          stroke="#8DC21F" stroke-width="16" stroke-linecap="round" fill="none"/>
-    <!-- Handle extending from 5-oclock downward-right -->
-    <line x1="115" y1="128" x2="148" y2="163" stroke="#8DC21F" stroke-width="16" stroke-linecap="round"/>
-    <!-- Arrow shaft: lower-left to upper-right, crossing through glass -->
-    <line x1="62" y1="163" x2="170" y2="42" stroke="#8DC21F" stroke-width="14" stroke-linecap="round"/>
-    <!-- Arrow head: L-shape at tip -->
-    <polyline points="128,42 170,42 170,84"
-              stroke="#8DC21F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 64" fill="none">
+  <!--
+    Same icon scaled by 0.38, offset tx=-10.06 ty=-7.78
+    All coordinates pre-calculated (no transform group)
+    Icon fits in x:4-46, y:4-57 within 64px height
+  -->
+  <!-- Circle arc (center ~34,26 radius ~21) -->
+  <path d="M 42 36 A 21 21 0 1 0 35 44"
+        stroke="#8DC21F" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Handle -->
+  <line x1="35" y1="44" x2="42" y2="57"
+        stroke="#8DC21F" stroke-width="6" stroke-linecap="round"/>
+  <!-- Arrow shaft -->
+  <line x1="4" y1="46" x2="46" y2="4"
+        stroke="#8DC21F" stroke-width="6" stroke-linecap="round"/>
+  <!-- Arrow head L-shape -->
+  <polyline points="31,4 46,4 46,19"
+            stroke="#8DC21F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <!-- REVEAL RANK text -->
-  <text x="60" y="40" font-family="Arial Black, Arial, sans-serif"
-        font-weight="900" font-size="24" fill="#1a1a1a" letter-spacing="1">REVEAL RANK</text>
+  <text x="60" y="41" font-family="Arial Black, Arial, sans-serif"
+        font-weight="900" font-size="22" fill="#1a1a1a" letter-spacing="1">REVEAL RANK</text>
 </svg>
