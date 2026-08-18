@@ -13,10 +13,9 @@ export async function POST(req: NextRequest) {
     const budget = data.get("budget") as string || "";
     const message = data.get("message") as string || "";
 
-    const matonKey = process.env.MATON_API_KEY;
-    const connId = process.env.GITHUB_MATON_CONN;
+    const ghToken = process.env.GITHUB_TOKEN;
 
-    if (!matonKey || !connId) {
+    if (!ghToken) {
       return NextResponse.json({ success: false, error: "Server config missing" }, { status: 500 });
     }
 
@@ -38,12 +37,13 @@ ${message || "_(no message)_"}
 *Submitted via revealrank.com/contact*`;
 
     const res = await fetch(
-      "https://api.maton.ai/github/repos/RevealDeploymentZone/revealrank/issues",
+      "https://api.github.com/repos/RevealDeploymentZone/revealrank/issues",
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${matonKey}`,
-          "Maton-Connection": connId,
+          Authorization: `Bearer ${ghToken}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
