@@ -102,7 +102,7 @@ const caseStudies = [
     industry: "Healthcare · Medical Supplies",
     location: "Nationwide, USA",
     services: ["SEO Services", "Web Development", "Content Marketing", "Technical SEO"],
-    image: null,
+    image: "/portfolio/promediic.png",
     useLogoCard: false,
     logo: null,
     color: "#059669",
