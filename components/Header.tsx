@@ -38,7 +38,7 @@ export default function Header() {
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image src="/logo-horizontal.svg" alt="Reveal Rank" width={200} height={44} priority />
+          <Image src="/logo.png" alt="Reveal Rank" width={65} height={56} priority />
         </Link>
 
         {/* Desktop Nav */}

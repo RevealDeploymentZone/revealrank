@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <Image src="/logo-white.svg" alt="Reveal Rank" width={110} height={85} />
+              <Image src="/logo.png" alt="Reveal Rank" width={94} height={81} />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Performance-driven SEO and digital marketing agency serving businesses across the United States. We deliver data-backed strategies that generate real traffic, leads, and revenue.
