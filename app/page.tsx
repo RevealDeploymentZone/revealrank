@@ -188,14 +188,14 @@ export default function HomePage() {
       </section>
 
       {/* Trusted by results strip */}
-      <section className="py-12 bg-gray-900">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
-          <p className="text-gray-400 text-sm text-center uppercase tracking-widest mb-8">Real Results for Real Businesses</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <p className="text-gray-400 text-base text-center uppercase tracking-widest mb-10">Real Results for Real Businesses</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {trustedBy.map((item) => (
               <div key={item.industry} className="text-center">
-                <div className="text-white font-bold text-sm mb-1">{item.industry}</div>
-                <div className="text-[#8DC21F] text-xs">{item.result}</div>
+                <div className="text-white font-bold text-base mb-2">{item.industry}</div>
+                <div className="text-[#8DC21F] text-sm leading-snug">{item.result}</div>
               </div>
             ))}
           </div>
