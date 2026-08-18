@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 230" fill="none">
   <!-- Same geometry as logo.svg — lighter green + white text for dark backgrounds -->
-  <path d="M 140 129 A 58 58 0 1 0 119 150"
-        stroke="#a3d437" stroke-width="16" stroke-linecap="round" fill="none"/>
-  <line x1="119" y1="150" x2="145" y2="180"
-        stroke="#a3d437" stroke-width="16" stroke-linecap="round"/>
-  <line x1="38" y1="165" x2="160" y2="20"
+  <path d="M 129 100 A 58 58 0 1 0 108 121"
+        stroke="#a3d437" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <line x1="108" y1="121" x2="183" y2="188"
         stroke="#a3d437" stroke-width="14" stroke-linecap="round"/>
-  <polyline points="120,20 160,20 160,60"
-            stroke="#a3d437" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="43" y1="188" x2="202" y2="14"
+        stroke="#a3d437" stroke-width="11" stroke-linecap="round"/>
+  <polyline points="116,14 202,14 202,56"
+            stroke="#a3d437" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <text x="105" y="218" text-anchor="middle"
         font-family="Arial Black, Arial, sans-serif"
         font-weight="900" font-size="24" fill="#ffffff" letter-spacing="3">REVEAL RANK</text>
