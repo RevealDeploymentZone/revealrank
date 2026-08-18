@@ -29,9 +29,7 @@ export default function Footer() {
                   <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">{s.icon}{s.circle}</svg>
                 </a>
               ))}
-              <a href="https://twitter.com/revealrank" aria-label="Twitter" className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#4361ee] transition-all">
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-              </a>
+
               <a href="https://www.facebook.com/people/Reveal-Rank/61583084368619/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#4361ee] transition-all">
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
               </a>
