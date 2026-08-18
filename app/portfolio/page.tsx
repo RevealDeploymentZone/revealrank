@@ -76,6 +76,27 @@ const caseStudies = [
     ],
   },
   {
+    name: "Crenosoft",
+    url: "https://crenosoft.in",
+    industry: "Technology · AI & Software",
+    location: "Lucknow, India",
+    services: ["Web Development", "Technical SEO", "Content Marketing"],
+    image: null,
+    useLogoCard: true,
+    logo: "/portfolio/crenosoft-logo.png",
+    color: "#f59e0b",
+    bg: "#1d1d1f",
+    tagline: "150+ Projects Delivered for Indian Startups & Enterprises",
+    description:
+      "Crenosoft is an AI software development and automation company based in Lucknow, India. We built their full website from the ground up — optimised for speed, conversion, and technical SEO — and implemented a content strategy that targets high-intent keywords across AI development, web apps, mobile apps, and cloud services in the Indian market.",
+    results: [
+      { value: "150+", label: "Projects delivered" },
+      { value: "50+", label: "Clients across India & abroad" },
+      { value: "98%", label: "Client retention rate" },
+      { value: "6", label: "Service verticals ranked" },
+    ],
+  },
+  {
     name: "Promediic",
     url: "https://promediic.com",
     industry: "Healthcare · Medical Supplies",
@@ -155,15 +176,15 @@ export default function PortfolioPage() {
               <div className={i % 2 === 1 ? "lg:order-2" : ""}>
                 {client.useLogoCard ? (
                   <div
-                    className="rounded-2xl overflow-hidden shadow-xl border border-gray-200 flex items-center justify-center p-10"
-                    style={{ backgroundColor: client.bg, minHeight: 320 }}
+                    className="rounded-2xl overflow-hidden shadow-xl flex items-center justify-center p-10"
+                    style={{ backgroundColor: client.bg, minHeight: 320, border: `1px solid ${client.color}30` }}
                   >
                     <Image
                       src={client.logo!}
                       alt={client.name}
-                      width={260}
-                      height={260}
-                      className="object-contain"
+                      width={400}
+                      height={120}
+                      className="object-contain max-w-full"
                     />
                   </div>
                 ) : client.image ? (
