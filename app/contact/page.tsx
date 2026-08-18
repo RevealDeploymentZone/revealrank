@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Reveal Rank – Get a Free SEO Audit & Strategy",
@@ -94,109 +95,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div>
-              <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Proposal</h2>
-                <form className="space-y-5" action="mailto:outreach@revealrank.com" method="POST" encType="text/plain">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">First Name *</label>
-                      <input
-                        type="text"
-                        name="first_name"
-                        required
-                        className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">Last Name *</label>
-                      <input
-                        type="text"
-                        name="last_name"
-                        required
-                        className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                        placeholder="Smith"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-gray-600 text-sm font-medium mb-2">Business Email *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                      placeholder="john@yourbusiness.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-600 text-sm font-medium mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-600 text-sm font-medium mb-2">Website URL</label>
-                    <input
-                      type="url"
-                      name="website"
-                      className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                      placeholder="https://yourbusiness.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-600 text-sm font-medium mb-2">Primary Service Interest</label>
-                    <select
-                      name="service"
-                      className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                    >
-                      <option value="">Select a service...</option>
-                      <option value="seo">SEO Services</option>
-                      <option value="local-seo">Local SEO</option>
-                      <option value="ppc">PPC / Google Ads</option>
-                      <option value="social">Social Media Marketing</option>
-                      <option value="content">Content Marketing</option>
-                      <option value="web">Web Design & Development</option>
-                      <option value="cro">Conversion Rate Optimisation</option>
-                      <option value="other">Other / Full Package</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-gray-600 text-sm font-medium mb-2">Monthly Budget (USD)</label>
-                    <select
-                      name="budget"
-                      className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                    >
-                      <option value="">Select budget range...</option>
-                      <option value="500-1000">$500 – $1,000</option>
-                      <option value="1000-2500">$1,000 – $2,500</option>
-                      <option value="2500-5000">$2,500 – $5,000</option>
-                      <option value="5000+">$5,000+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-gray-600 text-sm font-medium mb-2">Tell us about your goals</label>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none"
-                      placeholder="Describe your business, current challenges, and what you want to achieve..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#4361ee] hover:bg-[#3451de] text-white font-bold py-4 rounded-xl text-lg transition-all hover:scale-[1.02] shadow-md shadow-blue-100"
-                  >
-                    Get My Free Proposal →
-                  </button>
-                  <p className="text-gray-400 text-xs text-center">
-                    No spam. No commitment. Response within 24 business hours.
-                  </p>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </div>
         </div>
