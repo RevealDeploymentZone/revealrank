@@ -85,7 +85,7 @@ const caseStudies = [
     useLogoCard: true,
     logo: "/portfolio/crenosoft-logo.png",
     color: "#f59e0b",
-    bg: "#1d1d1f",
+    bg: "#ffffff",
     tagline: "150+ Projects Delivered for Indian Startups & Enterprises",
     description:
       "Crenosoft is an AI software development and automation company based in Lucknow, India. We built their full website from the ground up — optimised for speed, conversion, and technical SEO — and implemented a content strategy that targets high-intent keywords across AI development, web apps, mobile apps, and cloud services in the Indian market.",
