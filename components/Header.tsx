@@ -89,9 +89,6 @@ export default function Header() {
 
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="mailto:outreach@revealrank.com" className="text-sm font-semibold text-gray-600 hover:text-[#4361ee] transition-colors">
-            outreach@revealrank.com
-          </a>
           <Link
             href="/contact"
             className="bg-[#4361ee] hover:bg-[#3451de] text-white text-sm font-bold px-5 py-3 rounded-xl transition-all shadow-md shadow-blue-100"
