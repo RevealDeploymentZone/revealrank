@@ -6,10 +6,12 @@
   --color-blue: #4361ee;
   --color-orange: #ff531a;
   --color-green: #16bc4e;
-  --color-black: #101010;
-  --color-black-medium: #181a1b;
-  --color-black-light: #1f2122;
-  --color-white: #ffffff;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8fafc;
+  --color-border: #e5e7eb;
+  --color-card: #ffffff;
 }
 
 * {
@@ -20,8 +22,8 @@ html,
 body {
   overflow-x: hidden;
   width: 100%;
-  background-color: #101010;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111827;
   font-family: "DM Sans", sans-serif;
   line-height: 1.7;
 }
@@ -30,7 +32,7 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #101010;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
   background: #4361ee;

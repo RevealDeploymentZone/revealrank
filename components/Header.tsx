@@ -33,12 +33,12 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#101010]/95 backdrop-blur-md border-b border-[#1F2122]">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl font-black tracking-tight">
-            <span className="text-white">Reveal</span>
+            <span className="text-gray-900">Reveal</span>
             <span className="text-[#4361ee]">Rank</span>
           </span>
         </Link>
@@ -54,7 +54,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="text-[#cccccc] hover:text-white text-sm font-medium transition-colors flex items-center gap-1"
+                className="text-gray-600 hover:text-gray-900 text-sm font-semibold transition-colors flex items-center gap-1"
               >
                 {item.label}
                 {item.dropdown && (
@@ -65,19 +65,19 @@ export default function Header() {
               </Link>
               {item.dropdown && activeDropdown === item.label && (
                 <div className="absolute top-full left-0 pt-2 w-56 z-50">
-                  <div className="bg-[#181A1B] border border-[#2a2a2a] rounded-xl py-2 shadow-2xl">
+                  <div className="bg-white border border-gray-100 rounded-xl py-2 shadow-xl">
                     {item.dropdown.map((d) => (
                       <Link
                         key={d.href}
                         href={d.href}
-                        className="block px-4 py-2 text-sm text-[#cccccc] hover:text-white hover:bg-[#1F2122] transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:text-[#4361ee] hover:bg-blue-50 transition-colors"
                       >
                         {d.label}
                       </Link>
                     ))}
                     <Link
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-[#4361ee] hover:text-white hover:bg-[#1F2122] transition-colors border-t border-[#2a2a2a] mt-1 pt-3"
+                      className="block px-4 py-2 text-sm text-[#4361ee] font-semibold hover:bg-blue-50 transition-colors border-t border-gray-100 mt-1 pt-3"
                     >
                       View All →
                     </Link>
@@ -89,10 +89,13 @@ export default function Header() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
+          <a href="mailto:outreach@revealrank.com" className="text-sm font-semibold text-gray-600 hover:text-[#4361ee] transition-colors">
+            outreach@revealrank.com
+          </a>
           <Link
             href="/contact"
-            className="bg-[#4361ee] hover:bg-[#3451de] text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors"
+            className="bg-[#4361ee] hover:bg-[#3451de] text-white text-sm font-bold px-5 py-3 rounded-xl transition-all shadow-md shadow-blue-100"
           >
             Get Free Proposal
           </Link>
@@ -100,7 +103,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-gray-700 p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -118,12 +121,12 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#181A1B] border-t border-[#2a2a2a] py-4">
+        <div className="lg:hidden bg-white border-t border-gray-100 py-4 shadow-lg">
           {navItems.map((item) => (
             <div key={item.label}>
               <Link
                 href={item.href}
-                className="block px-6 py-3 text-white font-semibold hover:text-[#4361ee] transition-colors"
+                className="block px-6 py-3 text-gray-900 font-semibold hover:text-[#4361ee] transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
@@ -134,7 +137,7 @@ export default function Header() {
                     <Link
                       key={d.href}
                       href={d.href}
-                      className="block py-2 text-sm text-[#aaaaaa] hover:text-white transition-colors"
+                      className="block py-2 text-sm text-gray-500 hover:text-[#4361ee] transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {d.label}
@@ -147,7 +150,7 @@ export default function Header() {
           <div className="px-6 pt-4">
             <Link
               href="/contact"
-              className="block text-center bg-[#4361ee] text-white font-semibold py-3 rounded-xl"
+              className="block text-center bg-[#4361ee] text-white font-bold py-3 rounded-xl"
               onClick={() => setMobileOpen(false)}
             >
               Get Free Proposal

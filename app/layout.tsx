@@ -8,43 +8,43 @@ const BASE_URL = "https://www.revealrank.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Reveal Rank – Performance SEO & Digital Marketing Agency India",
+    default: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
     template: "%s | Reveal Rank",
   },
   description:
-    "Reveal Rank is India's performance-driven SEO and digital marketing agency. We deliver data-backed SEO, PPC, content marketing, and web development that grows traffic, leads, and revenue.",
+    "Reveal Rank is a performance-driven SEO and digital marketing agency serving businesses across the United States. We deliver data-backed SEO, PPC, content marketing, and web development that grows traffic, leads, and revenue.",
   keywords: [
-    "SEO agency India",
-    "digital marketing agency India",
+    "SEO agency USA",
+    "digital marketing agency USA",
     "SEO services",
-    "PPC management India",
+    "PPC management USA",
     "content marketing agency",
-    "web design development India",
+    "web design development USA",
     "Reveal Rank",
   ],
   authors: [{ name: "Reveal Rank", url: BASE_URL }],
   creator: "Reveal Rank",
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: BASE_URL,
     siteName: "Reveal Rank",
-    title: "Reveal Rank – Performance SEO & Digital Marketing Agency India",
+    title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
     description:
-      "Data-driven SEO, PPC, content marketing, and web development. We help Indian businesses dominate search rankings and grow revenue.",
+      "Data-driven SEO, PPC, content marketing, and web development. We help US businesses dominate search rankings and grow revenue.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Reveal Rank – SEO & Digital Marketing Agency India",
+        alt: "Reveal Rank – SEO & Digital Marketing Agency USA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reveal Rank – Performance SEO & Digital Marketing Agency India",
-    description: "Data-driven SEO, PPC, content marketing, and web development for Indian businesses.",
+    title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
+    description: "Data-driven SEO, PPC, content marketing, and web development for US businesses.",
     images: ["/og-image.jpg"],
     site: "@revealrank",
   },
@@ -65,16 +65,12 @@ const organizationSchema = {
   url: BASE_URL,
   logo: `${BASE_URL}/logo.png`,
   description:
-    "Reveal Rank is a performance-driven SEO and digital marketing agency in India helping brands grow through data-backed strategies.",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "IN",
-  },
+    "Reveal Rank is a performance-driven SEO and digital marketing agency helping US brands grow through data-backed strategies.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    email: "hello@revealrank.com",
-    availableLanguage: ["English", "Hindi"],
+    email: "outreach@revealrank.com",
+    availableLanguage: ["English"],
   },
   sameAs: [
     "https://www.linkedin.com/company/revealrank",
@@ -83,7 +79,7 @@ const organizationSchema = {
   ],
   serviceArea: {
     "@type": "Country",
-    name: "India",
+    name: "United States",
   },
 };
 

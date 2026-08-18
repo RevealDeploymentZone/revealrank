@@ -6,14 +6,14 @@ import { locations } from "@/data/locations";
 import { industries } from "@/data/industries";
 
 export const metadata: Metadata = {
-  title: "Reveal Rank – Performance SEO & Digital Marketing Agency India",
+  title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
   description:
-    "Reveal Rank is India's leading performance-driven SEO and digital marketing agency. We help businesses across Delhi, Mumbai, Bangalore and 20+ cities dominate Google rankings, generate qualified leads, and grow revenue through data-backed strategies.",
+    "Reveal Rank is a performance-driven SEO and digital marketing agency serving businesses across the United States. We help brands dominate Google rankings, generate qualified leads, and grow revenue through data-backed strategies.",
   alternates: { canonical: "https://www.revealrank.com" },
   openGraph: {
-    title: "Reveal Rank – Performance SEO & Digital Marketing Agency India",
+    title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
     description:
-      "Data-driven SEO, PPC, content marketing & web development. 300%+ average traffic growth. Serving 20+ cities across India.",
+      "Data-driven SEO, PPC, content marketing & web development. 300%+ average traffic growth. Serving 28+ major US cities.",
     url: "https://www.revealrank.com",
   },
 };
@@ -54,7 +54,7 @@ const whyUs = [
     icon: "🌍",
     title: "Local + National Reach",
     description:
-      "From hyperlocal campaigns targeting customers in your city to national SEO strategies that put you on the map across India—we do it all.",
+      "From hyperlocal campaigns targeting customers in your city to national SEO strategies that put you on the map across the US—we do it all.",
   },
   {
     icon: "💡",
@@ -98,9 +98,9 @@ const faqs = [
       "Reveal Rank offers a full suite of digital marketing services including SEO (technical, local, on-page, and off-page), PPC advertising (Google Ads), social media marketing, content marketing, web design and development, link building, and conversion rate optimisation.",
   },
   {
-    question: "Which cities in India does Reveal Rank serve?",
+    question: "Which US cities does Reveal Rank serve?",
     answer:
-      "We serve businesses across India including Delhi, Mumbai, Bangalore, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Jaipur, Surat, Chandigarh, Kochi, Indore, Nagpur, Gurgaon, Noida, Coimbatore, Vadodara, and many more cities.",
+      "We serve businesses across the United States including New York City, Los Angeles, Chicago, Houston, Phoenix, Philadelphia, San Antonio, San Diego, Dallas, Austin, Seattle, Denver, Miami, Atlanta, and many more major cities.",
   },
   {
     question: "How long does SEO take to show results?",
@@ -120,7 +120,7 @@ const faqs = [
   {
     question: "How do I get started with Reveal Rank?",
     answer:
-      "Simply fill out our contact form or call us to schedule a free 30-minute strategy session. We'll review your current digital presence, discuss your goals, and propose a tailored growth strategy—no commitment required.",
+      "Simply fill out our contact form or email us to schedule a free 30-minute strategy session. We'll review your current digital presence, discuss your goals, and propose a tailored growth strategy—no commitment required.",
   },
 ];
 
@@ -140,9 +140,9 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 md:py-36 bg-[#101010]">
+      <section className="relative overflow-hidden py-24 md:py-36 bg-white">
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-5"
           style={{
             background:
               "radial-gradient(ellipse 80% 60% at 50% -10%, #4361ee 0%, transparent 70%)",
@@ -151,9 +151,9 @@ export default function HomePage() {
         <div className="relative max-w-[1280px] mx-auto px-4 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-[#4361ee]/10 border border-[#4361ee]/20 text-[#4361ee] px-4 py-2 rounded-full text-sm font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-[#4361ee] animate-pulse" />
-            India&apos;s Performance-Driven Digital Marketing Agency
+            US Performance-Driven Digital Marketing Agency
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8 max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-8 max-w-5xl mx-auto">
             Marketing That{" "}
             <span
               style={{
@@ -165,20 +165,20 @@ export default function HomePage() {
               Scales Businesses
             </span>
           </h1>
-          <p className="text-[#aaa] text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             From data-driven SEO to high-converting PPC and compelling content—we craft digital strategies that build
-            lasting growth for ambitious brands across India.
+            lasting growth for ambitious brands across the United States.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link
               href="/contact"
-              className="bg-[#4361ee] hover:bg-[#3451de] text-white font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105"
+              className="bg-[#4361ee] hover:bg-[#3451de] text-white font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 shadow-lg shadow-blue-100"
             >
               Get Free SEO Audit
             </Link>
             <Link
               href="/services"
-              className="border border-[#2a2a2a] hover:border-[#4361ee] text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all"
+              className="border border-gray-200 hover:border-[#4361ee] text-gray-700 font-semibold px-8 py-4 rounded-xl text-lg transition-all"
             >
               Explore Services
             </Link>
@@ -187,8 +187,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-white mb-1">{stat.value}</div>
-                <div className="text-[#888] text-sm">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-black text-gray-900 mb-1">{stat.value}</div>
+                <div className="text-gray-500 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -196,13 +196,13 @@ export default function HomePage() {
       </section>
 
       {/* Services */}
-      <section className="py-20 bg-[#101010]">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Expertise. Your Growth.
             </h2>
-            <p className="text-[#888] text-lg max-w-2xl mx-auto">
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               We deliver end-to-end digital marketing services designed to maximise your online visibility, attract qualified
               leads, and convert them into loyal customers.
             </p>
@@ -212,7 +212,7 @@ export default function HomePage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group bg-[#181A1B] border border-[#2a2a2a] hover:border-[#4361ee] rounded-2xl p-8 transition-all duration-300 hover:bg-[#1F2122]"
+                className="group bg-white border border-gray-200 hover:border-[#4361ee] rounded-2xl p-8 transition-all duration-300 hover:shadow-lg"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5"
@@ -220,13 +220,13 @@ export default function HomePage() {
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#4361ee] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#4361ee] transition-colors">
                   {service.shortTitle}
                 </h3>
-                <p className="text-[#888] text-sm leading-relaxed mb-4">{service.tagline}</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.tagline}</p>
                 <div className="flex flex-wrap gap-2">
                   {service.features.slice(0, 3).map((f) => (
-                    <span key={f} className="text-xs bg-[#101010] text-[#888] px-3 py-1 rounded-full border border-[#2a2a2a]">
+                    <span key={f} className="text-xs bg-gray-50 text-gray-500 px-3 py-1 rounded-full border border-gray-200">
                       {f}
                     </span>
                   ))}
@@ -237,7 +237,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-[#4361ee] hover:text-white font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-[#4361ee] hover:text-[#3451de] font-semibold transition-colors"
             >
               View All Services →
             </Link>
@@ -246,11 +246,11 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-[#0d0d0d]">
+      <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Why Choose Reveal Rank?</h2>
-            <p className="text-[#888] text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose Reveal Rank?</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Driven by innovation and a client-first approach, we deliver exceptional digital services that fuel growth,
               engagement, and lasting success for your brand.
             </p>
@@ -262,8 +262,8 @@ export default function HomePage() {
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-[#888] text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-gray-900 font-bold text-lg mb-2">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -272,11 +272,11 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="py-20 bg-[#101010]">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">How We Work</h2>
-            <p className="text-[#888] text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">How We Work</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               A clear, transparent process from first conversation to measurable results—so you always know what&apos;s
               happening and what to expect.
             </p>
@@ -290,8 +290,8 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-2xl bg-[#4361ee] flex items-center justify-center text-white font-black text-xl mb-6">
                   {step.step}
                 </div>
-                <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
-                <p className="text-[#888] text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-gray-900 font-bold text-lg mb-3">{step.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -299,12 +299,12 @@ export default function HomePage() {
       </section>
 
       {/* Industries */}
-      <section className="py-20 bg-[#0d0d0d]">
+      <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Industries We Serve</h2>
-            <p className="text-[#888] text-lg max-w-2xl mx-auto">
-              Deep domain expertise across India&apos;s most competitive industries. We understand your market, your customers,
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Deep domain expertise across the most competitive US industries. We understand your market, your customers,
               and what it takes to win.
             </p>
           </div>
@@ -313,10 +313,10 @@ export default function HomePage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group bg-[#181A1B] border border-[#2a2a2a] hover:border-[#4361ee] rounded-xl p-6 text-center transition-all hover:bg-[#1F2122]"
+                className="group bg-white border border-gray-200 hover:border-[#4361ee] rounded-xl p-6 text-center transition-all hover:shadow-md"
               >
                 <div className="text-3xl mb-3">{industry.icon}</div>
-                <div className="text-white font-semibold text-sm group-hover:text-[#4361ee] transition-colors">
+                <div className="text-gray-900 font-semibold text-sm group-hover:text-[#4361ee] transition-colors">
                   {industry.name}
                 </div>
               </Link>
@@ -326,12 +326,12 @@ export default function HomePage() {
       </section>
 
       {/* Locations */}
-      <section className="py-20 bg-[#101010]">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Serving Businesses Across India</h2>
-            <p className="text-[#888] text-lg max-w-2xl mx-auto">
-              Local expertise. National reach. We help businesses in every major Indian city dominate their local and
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Serving Businesses Across the USA</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Local expertise. National reach. We help businesses in every major US city dominate their local and
               regional search results.
             </p>
           </div>
@@ -340,12 +340,12 @@ export default function HomePage() {
               <Link
                 key={loc.slug}
                 href={`/locations/${loc.slug}`}
-                className="group bg-[#181A1B] border border-[#2a2a2a] hover:border-[#4361ee] rounded-xl px-4 py-3 text-center transition-all"
+                className="group bg-white border border-gray-200 hover:border-[#4361ee] rounded-xl px-4 py-3 text-center transition-all hover:shadow-sm"
               >
-                <div className="text-white text-sm font-medium group-hover:text-[#4361ee] transition-colors">
+                <div className="text-gray-900 text-sm font-medium group-hover:text-[#4361ee] transition-colors">
                   {loc.city}
                 </div>
-                <div className="text-[#555] text-xs mt-1">{loc.state}</div>
+                <div className="text-gray-400 text-xs mt-1">{loc.state}</div>
               </Link>
             ))}
           </div>
@@ -353,19 +353,19 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-[#0d0d0d]">
+      <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-            <p className="text-[#888] text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Everything you need to know about working with Reveal Rank.
             </p>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.question} className="bg-[#181A1B] border border-[#2a2a2a] rounded-2xl p-6">
-                <h3 className="text-white font-bold mb-3 text-lg">{faq.question}</h3>
-                <p className="text-[#888] leading-relaxed">{faq.answer}</p>
+              <div key={faq.question} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-gray-900 font-bold mb-3 text-lg">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -373,28 +373,28 @@ export default function HomePage() {
       </section>
 
       {/* About / Trust */}
-      <section className="py-20 bg-[#101010]">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 The Reveal Rank Difference
               </h2>
-              <p className="text-[#aaa] leading-relaxed mb-6">
+              <p className="text-gray-600 leading-relaxed mb-6">
                 We are a passionate team of digital marketing experts committed to one thing: your growth. Unlike
                 agencies that over-promise and under-deliver, we build strategies grounded in data, executed with
                 precision, and measured by results that matter—traffic, leads, and revenue.
               </p>
-              <p className="text-[#aaa] leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed mb-8">
                 Our clients span e-commerce brands, healthcare providers, real estate developers, educational
-                institutions, and technology companies across India. What unites them is a commitment to digital
+                institutions, and technology companies across the US. What unites them is a commitment to digital
                 excellence—and a trust in Reveal Rank to deliver it.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="bg-[#181A1B] border border-[#2a2a2a] rounded-xl p-5">
+                  <div key={stat.label} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                     <div className="text-3xl font-black text-[#4361ee] mb-1">{stat.value}</div>
-                    <div className="text-[#888] text-sm">{stat.label}</div>
+                    <div className="text-gray-500 text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -414,13 +414,13 @@ export default function HomePage() {
                   body: "We focus on measurable outcomes—increased traffic, higher conversions, and improved brand engagement—to ensure real ROI.",
                 },
                 {
-                  title: "Local Expertise. Global Perspective.",
-                  body: "Working with clients across India and internationally, we deliver local market expertise with the strategic thinking of a global agency.",
+                  title: "Local Expertise. National Perspective.",
+                  body: "Working with clients across the US, we deliver local market expertise with the strategic thinking of a national agency.",
                 },
               ].map((item) => (
-                <div key={item.title} className="bg-[#181A1B] border border-[#2a2a2a] rounded-xl p-6">
-                  <h3 className="text-white font-bold mb-2">{item.title}</h3>
-                  <p className="text-[#888] text-sm leading-relaxed">{item.body}</p>
+                <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                  <h3 className="text-gray-900 font-bold mb-2">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
                 </div>
               ))}
             </div>
