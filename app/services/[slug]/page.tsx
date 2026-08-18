@@ -88,12 +88,12 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
               >
                 Get Free {service.shortTitle} Audit
               </Link>
-              <a
-                href="mailto:outreach@revealrank.com"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center border border-gray-200 hover:border-[#4361ee] text-gray-700 font-semibold px-8 py-4 rounded-xl text-lg transition-all"
               >
                 Talk to an Expert
-              </a>
+              </Link>
             </div>
           </div>
         </div>
