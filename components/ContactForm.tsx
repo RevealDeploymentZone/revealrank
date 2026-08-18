@@ -11,13 +11,12 @@ export default function ContactForm() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/outreach@revealrank.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
         body: data,
       });
       const json = await res.json();
-      if (json.success === "true" || json.success === true) {
+      if (json.success) {
         setStatus("success");
         form.reset();
       } else {
@@ -52,11 +51,6 @@ export default function ContactForm() {
     <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Proposal</h2>
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Formsubmit config */}
-        <input type="hidden" name="_subject" value="New Lead from Reveal Rank Website" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label className="block text-gray-600 text-sm font-medium mb-2">First Name *</label>
