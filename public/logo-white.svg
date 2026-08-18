@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 225" fill="none">
-  <!-- Same geometry as logo.svg, lighter green stroke + white text for dark backgrounds -->
-  <path d="M 138 116 A 55 55 0 1 0 118 136"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 230" fill="none">
+  <!-- Same geometry as logo.svg — lighter green + white text for dark backgrounds -->
+  <path d="M 140 129 A 58 58 0 1 0 119 150"
         stroke="#a3d437" stroke-width="16" stroke-linecap="round" fill="none"/>
-  <line x1="118" y1="136" x2="138" y2="171"
+  <line x1="119" y1="150" x2="145" y2="180"
         stroke="#a3d437" stroke-width="16" stroke-linecap="round"/>
-  <line x1="37" y1="141" x2="147" y2="31"
+  <line x1="38" y1="165" x2="160" y2="20"
         stroke="#a3d437" stroke-width="14" stroke-linecap="round"/>
-  <polyline points="107,31 147,31 147,71"
+  <polyline points="120,20 160,20 160,60"
             stroke="#a3d437" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <text x="105" y="214" text-anchor="middle"
+  <text x="105" y="218" text-anchor="middle"
         font-family="Arial Black, Arial, sans-serif"
         font-weight="900" font-size="24" fill="#ffffff" letter-spacing="3">REVEAL RANK</text>
 </svg>

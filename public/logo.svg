@@ -1,23 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 225" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 230" fill="none">
   <!--
-    Circle: center(90,88), radius=55
-    4-oclock exact: (90+55*cos30, 88+55*sin30) = (138,116)
-    5-oclock exact: (90+55*cos60, 88+55*sin60) = (118,136)
-    Arc goes CCW (sweep=0) the long way (large-arc=1): 330 degrees, gap at 4-5 oclock
+    Circle: center(90,100), radius=58
+    4-oclock = 30deg from pos-x: (140,129)
+    5-oclock = 60deg from pos-x: (119,150)
+    Arrowhead placed well ABOVE the circle top (circle top = y42)
+    so arrowhead at y=20 is clearly separated
   -->
-  <path d="M 138 116 A 55 55 0 1 0 118 136"
+  <!-- Magnifying glass arc: 330 degrees, gap at 4-5 oclock -->
+  <path d="M 140 129 A 58 58 0 1 0 119 150"
         stroke="#8DC21F" stroke-width="16" stroke-linecap="round" fill="none"/>
-  <!-- Handle: from 5-oclock down-right -->
-  <line x1="118" y1="136" x2="138" y2="171"
+  <!-- Handle from 5-oclock downward-right -->
+  <line x1="119" y1="150" x2="145" y2="180"
         stroke="#8DC21F" stroke-width="16" stroke-linecap="round"/>
-  <!-- Arrow shaft: lower-left to upper-right, through the glass -->
-  <line x1="37" y1="141" x2="147" y2="31"
+  <!-- Arrow shaft: lower-left to upper-right through the glass -->
+  <line x1="38" y1="165" x2="160" y2="20"
         stroke="#8DC21F" stroke-width="14" stroke-linecap="round"/>
-  <!-- Arrow head: L-shape at top-right tip -->
-  <polyline points="107,31 147,31 147,71"
+  <!-- Arrow head: L-shape at top-right, clearly above the circle -->
+  <polyline points="120,20 160,20 160,60"
             stroke="#8DC21F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <!-- REVEAL RANK text -->
-  <text x="105" y="214" text-anchor="middle"
+  <text x="105" y="218" text-anchor="middle"
         font-family="Arial Black, Arial, sans-serif"
         font-weight="900" font-size="24" fill="#1a1a1a" letter-spacing="3">REVEAL RANK</text>
 </svg>

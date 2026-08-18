@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 70" fill="none">
   <!--
-    Same icon scaled by 0.38, offset tx=-10.06 ty=-7.78
-    All coordinates pre-calculated (no transform group)
-    Icon fits in x:4-46, y:4-57 within 64px height
+    Same design scaled by 0.37
+    Circle center ~(22,35), radius ~22
+    Arrowhead at y=5 — clearly above circle top (y=13)
   -->
-  <!-- Circle arc (center ~34,26 radius ~21) -->
-  <path d="M 42 36 A 21 21 0 1 0 35 44"
+  <!-- Magnifying glass arc -->
+  <path d="M 41 45 A 22 22 0 1 0 33 53"
         stroke="#8DC21F" stroke-width="6" stroke-linecap="round" fill="none"/>
   <!-- Handle -->
-  <line x1="35" y1="44" x2="42" y2="57"
+  <line x1="33" y1="53" x2="43" y2="64"
         stroke="#8DC21F" stroke-width="6" stroke-linecap="round"/>
   <!-- Arrow shaft -->
-  <line x1="4" y1="46" x2="46" y2="4"
+  <line x1="3" y1="59" x2="48" y2="5"
         stroke="#8DC21F" stroke-width="6" stroke-linecap="round"/>
   <!-- Arrow head L-shape -->
-  <polyline points="31,4 46,4 46,19"
+  <polyline points="33,5 48,5 48,20"
             stroke="#8DC21F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <!-- REVEAL RANK text -->
-  <text x="60" y="41" font-family="Arial Black, Arial, sans-serif"
+  <text x="62" y="44" font-family="Arial Black, Arial, sans-serif"
         font-weight="900" font-size="22" fill="#1a1a1a" letter-spacing="1">REVEAL RANK</text>
 </svg>
