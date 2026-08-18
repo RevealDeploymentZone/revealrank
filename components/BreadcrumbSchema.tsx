@@ -26,15 +26,15 @@ export default function BreadcrumbSchema({ items, baseUrl = "https://www.revealr
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <nav aria-label="Breadcrumb" className="max-w-[1280px] mx-auto px-4 lg:px-8 py-4">
-        <ol className="flex items-center gap-2 text-sm text-[#666]">
+      <nav aria-label="Breadcrumb" className="max-w-[1280px] mx-auto px-4 lg:px-8 py-3">
+        <ol className="flex items-center gap-2 text-sm text-gray-400">
           {items.map((item, index) => (
             <li key={item.href} className="flex items-center gap-2">
-              {index > 0 && <span>/</span>}
+              {index > 0 && <span className="text-gray-300">/</span>}
               {index === items.length - 1 ? (
-                <span className="text-white">{item.name}</span>
+                <span className="text-gray-500">{item.name}</span>
               ) : (
-                <a href={item.href} className="hover:text-white transition-colors">
+                <a href={item.href} className="hover:text-[#4361ee] transition-colors">
                   {item.name}
                 </a>
               )}
