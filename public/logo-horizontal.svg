@@ -1,12 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
-  <!-- Magnifying glass circle (open C shape) -->
-  <path d="M 8 22 A 18 18 0 1 1 26 40" stroke="#8DC21F" stroke-width="7" stroke-linecap="round" fill="none"/>
-  <!-- Handle of magnifying glass -->
-  <line x1="20" y1="37" x2="32" y2="49" stroke="#8DC21F" stroke-width="7" stroke-linecap="round"/>
-  <!-- Arrow shaft going up-right through the glass -->
-  <line x1="18" y1="43" x2="50" y2="11" stroke="#8DC21F" stroke-width="7" stroke-linecap="round"/>
-  <!-- Arrow head -->
-  <polyline points="36,11 50,11 50,25" stroke="#8DC21F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Text: REVEAL RANK -->
-  <text x="66" y="40" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="26" fill="#1a1a1a" letter-spacing="1">REVEAL RANK</text>
+  <!-- Magnifying glass + arrow icon, scaled to fit 60px height -->
+  <g transform="translate(-24.7, -16.1) scale(0.43)">
+    <!-- Circle arc: center(90,82), r=54, from 4-oclock to 5-oclock going long way -->
+    <path d="M 135 107 A 54 54 0 1 0 115 128"
+          stroke="#8DC21F" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <!-- Handle extending from 5-oclock downward-right -->
+    <line x1="115" y1="128" x2="148" y2="163" stroke="#8DC21F" stroke-width="16" stroke-linecap="round"/>
+    <!-- Arrow shaft: lower-left to upper-right, crossing through glass -->
+    <line x1="62" y1="163" x2="170" y2="42" stroke="#8DC21F" stroke-width="14" stroke-linecap="round"/>
+    <!-- Arrow head: L-shape at tip -->
+    <polyline points="128,42 170,42 170,84"
+              stroke="#8DC21F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- REVEAL RANK text -->
+  <text x="60" y="40" font-family="Arial Black, Arial, sans-serif"
+        font-weight="900" font-size="24" fill="#1a1a1a" letter-spacing="1">REVEAL RANK</text>
 </svg>
