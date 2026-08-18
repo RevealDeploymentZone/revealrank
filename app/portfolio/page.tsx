@@ -97,6 +97,27 @@ const caseStudies = [
     ],
   },
   {
+    name: "Virsa Labs",
+    url: "https://virsalabs.io",
+    industry: "Marketing · Social Media",
+    location: "Lehigh Valley, PA",
+    services: ["Social Media Marketing", "SEO Services", "Content Marketing", "Web Development"],
+    image: "/portfolio/virsalabs.png",
+    useLogoCard: false,
+    logo: null,
+    color: "#7c3aed",
+    bg: "#f5f3ff",
+    tagline: "Dominant Social Media Presence for Lehigh Valley's Top Agency",
+    description:
+      "Virsa Labs is a fast-growing digital marketing agency in the Lehigh Valley, PA. We managed their social media marketing end-to-end — building consistent brand presence across platforms, growing their audience, and generating inbound leads. Their online visibility now matches the quality of the results they deliver for their own clients.",
+    results: [
+      { value: "3x", label: "Social media reach growth" },
+      { value: "Top 5", label: "Lehigh Valley SEO rankings" },
+      { value: "40%", label: "Increase in inbound leads" },
+      { value: "5★", label: "Consistent brand reputation" },
+    ],
+  },
+  {
     name: "Promediic",
     url: "https://promediic.com",
     industry: "Healthcare · Medical Supplies",
@@ -126,6 +147,7 @@ const serviceColors: Record<string, string> = {
   "Content Marketing": "#f59e0b",
   "PPC Advertising": "#ec4899",
   "Technical SEO": "#06b6d4",
+  "Social Media Marketing": "#7c3aed",
 };
 
 export default function PortfolioPage() {
@@ -320,7 +342,7 @@ export default function PortfolioPage() {
           <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">Beyond These Case Studies</p>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">We Work Across Every Industry</h2>
           <p className="text-gray-500 max-w-2xl mx-auto mb-8">
-            These four case studies represent a small slice of our work. We've delivered SEO and web development results for 200+ businesses across{" "}
+            These case studies represent a small slice of our work. We've delivered SEO and web development results for 200+ businesses across{" "}
             <Link href="/industries" className="text-[#4361ee] hover:underline font-medium">8 major industry verticals</Link>{" "}
             and 28+ US cities.{" "}
             <Link href="/services" className="text-[#4361ee] hover:underline font-medium">View all our services →</Link>
