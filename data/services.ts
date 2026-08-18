@@ -25,9 +25,9 @@ export const services: Service[] = [
       "Reveal Rank delivers enterprise-grade SEO strategies that move your website to page one and keep it there. We combine deep technical expertise with content excellence to build sustainable organic growth for your brand.",
     icon: "🔍",
     color: "#4361ee",
-    primaryKeyword: "SEO services India",
+    primaryKeyword: "SEO services USA",
     secondaryKeywords: [
-      "best SEO agency India",
+      "best SEO agency USA",
       "search engine optimization company",
       "SEO experts",
       "organic traffic growth",
@@ -62,7 +62,7 @@ export const services: Service[] = [
       {
         title: "Measurable ROI",
         description:
-          "Every rupee spent on SEO is tracked. We provide clear reporting on rankings, traffic, leads, and revenue impact.",
+          "Every dollar spent on SEO is tracked. We provide clear reporting on rankings, traffic, leads, and revenue impact.",
       },
     ],
     process: [
@@ -140,7 +140,7 @@ export const services: Service[] = [
       "Reveal Rank's local SEO services put your business at the top of Google Maps and local search results, driving foot traffic and local leads that convert to real revenue.",
     icon: "📍",
     color: "#16BC4E",
-    primaryKeyword: "local SEO services India",
+    primaryKeyword: "local SEO services USA",
     secondaryKeywords: [
       "Google Maps SEO",
       "local search optimization",
@@ -250,7 +250,7 @@ export const services: Service[] = [
       "Your content can't rank if search engines can't crawl and index your site properly. Reveal Rank's technical SEO services fix the hidden issues that silently kill your rankings and unlock your full organic potential.",
     icon: "⚙️",
     color: "#933ceb",
-    primaryKeyword: "technical SEO services India",
+    primaryKeyword: "technical SEO services USA",
     secondaryKeywords: [
       "website technical audit",
       "Core Web Vitals optimization",
@@ -355,7 +355,7 @@ export const services: Service[] = [
       "Reveal Rank specialises in e-commerce SEO that drives category rankings, product page visibility, and revenue growth for online stores built on Shopify, WooCommerce, Magento, and custom platforms.",
     icon: "🛒",
     color: "#ff9f1c",
-    primaryKeyword: "ecommerce SEO services India",
+    primaryKeyword: "ecommerce SEO services USA",
     secondaryKeywords: [
       "Shopify SEO agency",
       "WooCommerce SEO",
@@ -460,7 +460,7 @@ export const services: Service[] = [
       "Reveal Rank's white-hat link building services earn editorial backlinks from authoritative, relevant websites—the single most powerful signal to boost your domain authority and search rankings.",
     icon: "🔗",
     color: "#BF249A",
-    primaryKeyword: "link building services India",
+    primaryKeyword: "link building services USA",
     secondaryKeywords: [
       "backlink building agency",
       "white hat link building",
@@ -560,18 +560,18 @@ export const services: Service[] = [
     slug: "ppc-advertising",
     title: "PPC Advertising (Google Ads)",
     shortTitle: "PPC / Google Ads",
-    tagline: "Maximise Every Rupee of Your Ad Budget",
+    tagline: "Maximize Every Dollar of Your Ad Budget",
     description:
       "Reveal Rank's PPC management services deliver high-ROI Google Ads campaigns that bring qualified clicks, lower your cost-per-lead, and scale revenue predictably—without wasted spend.",
     icon: "📈",
     color: "#ff531a",
-    primaryKeyword: "PPC advertising agency India",
+    primaryKeyword: "PPC advertising agency USA",
     secondaryKeywords: [
       "Google Ads management",
-      "pay per click services India",
+      "pay per click services USA",
       "Google Ads agency",
       "paid search marketing",
-      "SEM agency India",
+      "SEM agency USA",
     ],
     features: [
       "Google Search Ads",
@@ -641,7 +641,7 @@ export const services: Service[] = [
       {
         question: "How much should I spend on Google Ads?",
         answer:
-          "Minimum effective budgets vary by industry, competition, and goals. For most SMBs in India, a starting budget of ₹30,000–₹1,00,000/month allows meaningful data collection and optimisation. We'll recommend a specific budget after reviewing your goals and market.",
+          "Minimum effective budgets vary by industry, competition, and goals. For most SMBs, a starting budget of $1,500–$5,000/month allows meaningful data collection and optimisation. We'll recommend a specific budget after reviewing your goals and market.",
       },
       {
         question: "Do you charge a percentage of ad spend or a flat fee?",
@@ -670,11 +670,11 @@ export const services: Service[] = [
       "Reveal Rank creates and manages social media strategies that grow your audience, drive engagement, and convert followers into customers across Instagram, Facebook, LinkedIn, and more.",
     icon: "📱",
     color: "#BF249A",
-    primaryKeyword: "social media marketing agency India",
+    primaryKeyword: "social media marketing agency USA",
     secondaryKeywords: [
       "Instagram marketing services",
       "Facebook marketing agency",
-      "LinkedIn marketing India",
+      "LinkedIn marketing USA",
       "social media management",
       "brand social media strategy",
     ],
@@ -775,11 +775,11 @@ export const services: Service[] = [
       "Reveal Rank's content marketing services build your brand authority through strategic, high-quality content that attracts organic traffic, nurtures leads, and drives measurable business growth.",
     icon: "✍️",
     color: "#ff9f1c",
-    primaryKeyword: "content marketing agency India",
+    primaryKeyword: "content marketing agency USA",
     secondaryKeywords: [
       "SEO content writing services",
       "blog writing agency",
-      "content strategy India",
+      "content strategy USA",
       "B2B content marketing",
       "website copywriting services",
     ],
@@ -880,11 +880,11 @@ export const services: Service[] = [
       "Reveal Rank builds fast, beautiful, conversion-optimised websites tailored to your brand and business goals—on WordPress, Shopify, or fully custom builds—with SEO baked in from day one.",
     icon: "💻",
     color: "#4361ee",
-    primaryKeyword: "web design and development agency India",
+    primaryKeyword: "web design and development agency USA",
     secondaryKeywords: [
-      "website development company India",
+      "website development company USA",
       "WordPress development agency",
-      "Shopify development India",
+      "Shopify development USA",
       "custom website design",
       "responsive web design services",
     ],
@@ -985,9 +985,9 @@ export const services: Service[] = [
       "Reveal Rank's CRO services systematically increase the percentage of website visitors who take your desired action—sign up, buy, or call—turning your existing traffic into significantly more revenue.",
     icon: "🎯",
     color: "#16BC4E",
-    primaryKeyword: "conversion rate optimization services India",
+    primaryKeyword: "conversion rate optimization services USA",
     secondaryKeywords: [
-      "CRO agency India",
+      "CRO agency USA",
       "A/B testing services",
       "website conversion optimization",
       "landing page optimization",
@@ -1071,7 +1071,7 @@ export const services: Service[] = [
       {
         question: "What is a good conversion rate for my industry?",
         answer:
-          "Average e-commerce conversion rates in India range from 1–3%. B2B lead generation pages typically convert at 3–8%. Our goal is always to beat your industry benchmark—and then keep improving from there.",
+          "Average e-commerce conversion rates in the US range from 2–4%. B2B lead generation pages typically convert at 3–8%. Our goal is always to beat your industry benchmark—and then keep improving from there.",
       },
     ],
     resultStats: [

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/data/services";
+import { industries } from "@/data/industries";
 import CTASection from "@/components/CTASection";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -107,10 +108,26 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Full-Service Marketing Wins</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Individual marketing channels work. But when SEO, content, PPC, and social media work together as a coordinated system, the results compound dramatically. Your organic content fuels your paid campaigns. Your PPC data informs your SEO targeting. Your social presence amplifies your content reach. Each channel makes every other channel more effective.
+                  Individual marketing channels work. But when{" "}
+                  <Link href="/services/seo-services" className="text-[#4361ee] hover:underline font-medium">SEO</Link>,{" "}
+                  <Link href="/services/content-marketing" className="text-[#4361ee] hover:underline font-medium">content</Link>,{" "}
+                  <Link href="/services/ppc-advertising" className="text-[#4361ee] hover:underline font-medium">PPC</Link>, and{" "}
+                  <Link href="/services/social-media-marketing" className="text-[#4361ee] hover:underline font-medium">social media</Link>{" "}
+                  work together as a coordinated system, the results compound dramatically. Your organic content fuels your paid campaigns. Your PPC data informs your SEO targeting. Your social presence amplifies your content reach. Each channel makes every other channel more effective.
                 </p>
                 <p>
-                  Reveal Rank manages all your digital channels from one team, ensuring every dollar spent is coordinated toward the same growth objectives. No siloed agencies. No duplicated effort. No gaps in your strategy.
+                  According to{" "}
+                  <a href="https://www.hubspot.com/marketing-statistics" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">HubSpot's marketing research</a>,
+                  companies that use an integrated marketing approach see 3× higher return on investment than those running siloed campaigns. Reveal Rank manages all your digital channels from one team, ensuring every dollar spent is coordinated toward the same growth objectives. No duplicated effort. No gaps in your strategy.
+                </p>
+                <p>
+                  Whether you need{" "}
+                  <Link href="/services/local-seo" className="text-[#4361ee] hover:underline font-medium">local SEO</Link>{" "}
+                  to capture nearby customers,{" "}
+                  <Link href="/services/technical-seo" className="text-[#4361ee] hover:underline font-medium">technical SEO</Link>{" "}
+                  to fix site-wide issues, or{" "}
+                  <Link href="/services/conversion-rate-optimization" className="text-[#4361ee] hover:underline font-medium">conversion rate optimisation</Link>{" "}
+                  to turn traffic into revenue—our team covers every layer of your digital growth stack.
                 </p>
               </div>
             </div>
@@ -134,6 +151,33 @@ export default function ServicesPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries we serve */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">Industry Expertise</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Services Tailored to Your Industry</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm">
+              Every industry has different search behaviour, compliance requirements, and competitive dynamics. Our specialists understand your market deeply—delivering strategies that work for your specific sector.{" "}
+              <Link href="/industries" className="text-[#4361ee] hover:underline font-medium">View all industries we serve →</Link>
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {industries.map((ind) => (
+              <Link
+                key={ind.slug}
+                href={`/industries/${ind.slug}`}
+                className="group bg-white border border-gray-200 hover:border-[#4361ee] rounded-xl p-5 text-center transition-all hover:shadow-md"
+              >
+                <div className="text-3xl mb-2">{ind.icon}</div>
+                <div className="text-gray-700 text-sm font-semibold group-hover:text-[#4361ee] transition-colors">{ind.name}</div>
+                <div className="text-gray-400 text-xs mt-1">{ind.tagline.split(" ").slice(0, 4).join(" ")}…</div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

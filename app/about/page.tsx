@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { services } from "@/data/services";
 import CTASection from "@/components/CTASection";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -97,10 +98,19 @@ export default function AboutPage() {
                   We set out to build something different: an agency that holds itself accountable to the same metrics its clients care about—revenue, leads, and genuine business growth.
                 </p>
                 <p>
-                  Since our founding, we've helped businesses across the United States—from early-stage startups to established enterprises—achieve measurable digital marketing results. Our approach is simple: understand your business deeply, build a strategy grounded in data, execute with precision, and continuously optimise until the numbers move.
+                  Since our founding, we've helped businesses across the United States—from early-stage startups to established enterprises—achieve measurable digital marketing results through{" "}
+                  <Link href="/services/seo-services" className="text-[#4361ee] hover:underline font-medium">SEO</Link>,{" "}
+                  <Link href="/services/ppc-advertising" className="text-[#4361ee] hover:underline font-medium">PPC advertising</Link>,{" "}
+                  <Link href="/services/content-marketing" className="text-[#4361ee] hover:underline font-medium">content marketing</Link>, and{" "}
+                  <Link href="/services/web-design-development" className="text-[#4361ee] hover:underline font-medium">web development</Link>.
+                  Our approach is simple: understand your business deeply, build a strategy grounded in data, execute with precision, and continuously optimise until the numbers move.
                 </p>
                 <p>
-                  Today, Reveal Rank serves clients across 28+ US cities and multiple industries, with a team of 30+ certified specialists who are genuinely passionate about digital marketing and the results it can deliver.
+                  Today, Reveal Rank serves clients across 28+ US cities and multiple industries—including{" "}
+                  <Link href="/industries/ecommerce" className="text-[#4361ee] hover:underline font-medium">e-commerce</Link>,{" "}
+                  <Link href="/industries/healthcare" className="text-[#4361ee] hover:underline font-medium">healthcare</Link>,{" "}
+                  <Link href="/industries/technology" className="text-[#4361ee] hover:underline font-medium">technology</Link>, and{" "}
+                  <Link href="/industries/real-estate" className="text-[#4361ee] hover:underline font-medium">real estate</Link>—with a team of 30+ certified specialists who are genuinely passionate about digital marketing and the results it can deliver.
                 </p>
               </div>
             </div>
@@ -196,6 +206,40 @@ export default function AboutPage() {
             >
               Start a Conversation
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services overview */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">What We Do</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              From{" "}
+              <Link href="/services/technical-seo" className="text-[#4361ee] hover:underline">technical SEO</Link>{" "}
+              and{" "}
+              <Link href="/services/local-seo" className="text-[#4361ee] hover:underline">local search</Link>{" "}
+              to{" "}
+              <Link href="/services/social-media-marketing" className="text-[#4361ee] hover:underline">social media</Link>{" "}
+              and{" "}
+              <Link href="/services/conversion-rate-optimization" className="text-[#4361ee] hover:underline">conversion optimisation</Link>—every service we offer is designed to drive measurable business outcomes.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {services.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/services/${s.slug}`}
+                className="group bg-white border border-gray-200 hover:border-[#4361ee] rounded-xl p-4 text-center transition-all hover:shadow-md"
+              >
+                <div className="text-2xl mb-2">{s.icon}</div>
+                <div className="text-gray-700 text-xs font-semibold group-hover:text-[#4361ee] transition-colors">{s.shortTitle}</div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Link href="/services" className="text-[#4361ee] hover:underline font-semibold text-sm">View All Services →</Link>
           </div>
         </div>
       </section>

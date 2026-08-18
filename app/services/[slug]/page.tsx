@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { services, getService } from "@/data/services";
+import { industries } from "@/data/industries";
 import CTASection from "@/components/CTASection";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -203,13 +204,28 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why {service.shortTitle} Is Critical for Your Business</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                In today's digital-first world, {service.title.toLowerCase()} is no longer optional—it's the foundation of sustainable business growth. Companies that invest in {service.shortTitle.toLowerCase()} consistently outperform competitors in visibility, lead volume, and long-term revenue. The businesses that delay are the ones left catching up while rivals capture market share.
+                In today's digital-first world, {service.title.toLowerCase()} is no longer optional—it's the foundation of sustainable business growth. According to{" "}
+                <a href="https://www.thinkwithgoogle.com" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google's research</a>,
+                over 90% of purchase decisions now begin with an online search. Companies that invest in {service.shortTitle.toLowerCase()} consistently outperform competitors in visibility, lead volume, and long-term revenue. The businesses that delay are the ones left catching up while rivals capture market share.
               </p>
               <p>
-                What makes Reveal Rank's approach to {service.title.toLowerCase()} different is our relentless focus on outcomes. We don't report on activities—we report on results. Every month, you'll receive a clear breakdown of rankings gained, traffic increases, leads generated, and the tangible ROI being delivered against your investment.
+                What makes Reveal Rank's approach to {service.title.toLowerCase()} different is our relentless focus on outcomes. We don't report on activities—we report on results. Every month, you'll receive a clear breakdown of rankings gained, traffic increases, leads generated, and the tangible ROI being delivered against your investment. Our strategies are grounded in{" "}
+                <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google's quality guidelines</a>{" "}
+                and refined through continuous analysis using tools like{" "}
+                <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google Search Console</a>{" "}
+                and{" "}
+                <a href="https://ahrefs.com" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Ahrefs</a>.
               </p>
               <p>
-                Our {service.shortTitle.toLowerCase()} strategies are designed to evolve with your business. As your goals grow and your market shifts, we continuously refine targeting, expand reach, and identify new opportunities—ensuring you're always ahead, not just keeping pace.
+                Our {service.shortTitle.toLowerCase()} strategies are designed to evolve with your business. As your goals grow and your market shifts, we continuously refine targeting, expand reach, and identify new opportunities. Whether you're in{" "}
+                <Link href="/industries/ecommerce" className="text-[#4361ee] hover:underline font-medium">e-commerce</Link>,{" "}
+                <Link href="/industries/healthcare" className="text-[#4361ee] hover:underline font-medium">healthcare</Link>,{" "}
+                <Link href="/industries/technology" className="text-[#4361ee] hover:underline font-medium">technology</Link>, or{" "}
+                <Link href="/industries/finance" className="text-[#4361ee] hover:underline font-medium">financial services</Link>,
+                our approach is tailored to your industry's specific competitive dynamics—ensuring you're always ahead, not just keeping pace.
+              </p>
+              <p>
+                Every {service.shortTitle.toLowerCase()} engagement at Reveal Rank begins with a thorough audit of your current performance and competitive landscape. We benchmark against your top competitors using industry-leading tools, then build a roadmap with clear milestones, deliverables, and KPIs. This ensures accountability from day one and gives you a precise picture of what to expect and when.
               </p>
             </div>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -224,6 +240,29 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">Industry Expertise</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">We Deliver {service.shortTitle} Results Across Every Industry</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Deep sector knowledge means our {service.shortTitle.toLowerCase()} strategies reflect the unique search behaviour, compliance requirements, and competitive dynamics of your market.</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {industries.map((ind) => (
+              <Link
+                key={ind.slug}
+                href={`/industries/${ind.slug}`}
+                className="group bg-white border border-gray-200 hover:border-[#4361ee] rounded-xl p-5 text-center transition-all hover:shadow-md"
+              >
+                <div className="text-3xl mb-2">{ind.icon}</div>
+                <div className="text-gray-700 text-sm font-semibold group-hover:text-[#4361ee] transition-colors">{ind.name}</div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

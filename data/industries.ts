@@ -18,9 +18,9 @@ export const industries: Industry[] = [
     icon: "🛒",
     tagline: "Drive More Sales from Every Channel",
     description:
-      "Reveal Rank powers e-commerce growth through full-funnel digital strategies—covering SEO, paid ads, CRO, and social commerce—built specifically for online retail brands competing in India's fast-growing e-commerce market.",
+      "Reveal Rank powers e-commerce growth through full-funnel digital strategies—covering SEO, paid ads, CRO, and social commerce—built specifically for online retail brands competing in the USA's highly competitive e-commerce market.",
     challenges: [
-      "Intense competition from Amazon, Flipkart, and direct-to-consumer brands",
+      "Intense competition from Amazon, Walmart, Target, and direct-to-consumer brands",
       "Rising customer acquisition costs across paid channels",
       "High cart abandonment rates and poor conversion optimisation",
       "Thin margins making ad spend efficiency critical",
@@ -142,7 +142,7 @@ export const industries: Industry[] = [
     icon: "🏢",
     tagline: "Generate High-Quality Property Leads Online",
     description:
-      "Reveal Rank's real estate digital marketing strategies help developers, brokers, and property portals generate qualified leads, dominate local property searches, and build lasting brand authority in India's competitive real estate market.",
+      "Reveal Rank's real estate digital marketing strategies help developers, brokers, and property portals generate qualified leads, dominate local property searches, and build lasting brand authority in the USA's competitive real estate market.",
     challenges: [
       "Intense competition from 99acres, MagicBricks, and Housing.com",
       "High cost-per-lead in real estate paid advertising",
@@ -216,7 +216,7 @@ export const industries: Industry[] = [
       {
         title: "Course & Program SEO",
         description:
-          "We optimise individual course and program pages for high-intent searches like 'MBA colleges in Delhi' or 'online coding courses India'—capturing students at the decision stage.",
+          "We optimise individual course and program pages for high-intent searches like 'MBA programs near me' or 'online coding bootcamps USA'—capturing students at the decision stage.",
       },
       {
         title: "EdTech Content Strategy",
@@ -328,10 +328,10 @@ export const industries: Industry[] = [
     icon: "⚖️",
     tagline: "Attract High-Value Clients to Your Law Firm",
     description:
-      "Reveal Rank helps law firms, advocates, and legal consultancies attract high-value clients through specialised legal SEO, authoritative content marketing, and targeted local campaigns—built around India's unique legal marketing landscape.",
+      "Reveal Rank helps law firms, advocates, and legal consultancies attract high-value clients through specialised legal SEO, authoritative content marketing, and targeted local campaigns—built around US state bar compliance requirements and local market dynamics.",
     challenges: [
-      "Bar Council of India restrictions on advertising",
-      "High competition for keywords like 'lawyer in [city]' and 'legal advice India'",
+      "State bar rules and ABA guidelines on legal advertising",
+      "High competition for keywords like 'lawyer in [city]' and 'best attorney near me'",
       "Building E-E-A-T authority for legal content that satisfies Google's YMYL standards",
       "Targeting clients by specific practice area and location",
       "Long consideration cycles requiring sustained trust-building content",
@@ -361,9 +361,9 @@ export const industries: Industry[] = [
     services: ["SEO Services", "Local SEO", "Content Marketing", "Reputation Management", "Technical SEO"],
     faqs: [
       {
-        question: "Are there restrictions on marketing for lawyers in India?",
+        question: "Are there restrictions on marketing for lawyers in the USA?",
         answer:
-          "Yes. The Bar Council of India has rules governing legal advertising. Our legal marketing strategies are fully compliant—focusing on informational content, organic SEO, and reputation building rather than direct advertising.",
+          "Yes. Each US state bar has ethics rules governing attorney advertising. Our legal marketing strategies are fully compliant—focusing on informational content, organic SEO, and reputation building within ABA and state bar guidelines.",
       },
       {
         question: "How long does legal SEO take to generate client enquiries?",
@@ -383,9 +383,9 @@ export const industries: Industry[] = [
     icon: "💰",
     tagline: "Build Trust and Grow Assets Under Management",
     description:
-      "Reveal Rank's financial services digital marketing helps banks, NBFCs, wealth managers, insurance companies, and fintech platforms build credibility, capture high-intent financial queries, and acquire customers at scale.",
+      "Reveal Rank's financial services digital marketing helps banks, credit unions, wealth managers, insurance companies, and fintech platforms build credibility, capture high-intent financial queries, and acquire customers at scale.",
     challenges: [
-      "SEBI and RBI compliance requirements for financial advertising",
+      "SEC, FINRA, and CFPB compliance requirements for financial advertising",
       "Extreme competition for high-CPC financial keywords",
       "Building trust for YMYL financial content",
       "Long consideration cycles for high-value financial products",
@@ -395,12 +395,12 @@ export const industries: Industry[] = [
       {
         title: "Compliance-First Financial Content",
         description:
-          "We create SEBI/RBI-compliant financial content with appropriate disclaimers, expert attribution, and factual accuracy—satisfying both regulators and Google's YMYL standards.",
+          "We create SEC/FINRA-compliant financial content with appropriate disclaimers, expert attribution, and factual accuracy—satisfying both regulators and Google's YMYL standards.",
       },
       {
         title: "Financial Query SEO",
         description:
-          "We rank for high-intent financial searches—'best mutual fund India', 'home loan rates', 'term insurance comparison'—capturing prospects at peak decision moments.",
+          "We rank for high-intent financial searches—'best index funds USA', 'mortgage rates today', 'life insurance comparison'—capturing prospects at peak decision moments.",
       },
       {
         title: "Fintech Product Marketing",
@@ -418,7 +418,7 @@ export const industries: Industry[] = [
       {
         question: "How do you handle compliance for financial marketing?",
         answer:
-          "Our financial content specialists are trained on SEBI advertising guidelines, IRDAI regulations, and RBI compliance requirements. All content is reviewed for regulatory compliance before publication.",
+          "Our financial content specialists are trained on SEC advertising guidelines, FINRA Rule 2210, and CFPB requirements. All content is reviewed for regulatory compliance before publication.",
       },
       {
         question: "Can you help with App Store Optimisation for fintech apps?",

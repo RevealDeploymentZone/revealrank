@@ -188,14 +188,39 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {industry.services.map((service) => (
-              <div
-                key={service}
-                className="bg-white border border-gray-200 rounded-xl px-6 py-4 text-gray-900 font-medium hover:border-[#4361ee] hover:text-[#4361ee] transition-all shadow-sm"
-              >
-                {service}
-              </div>
-            ))}
+            {industry.services.map((service) => {
+              const slugMap: Record<string, string> = {
+                "SEO Services": "seo-services",
+                "Local SEO": "local-seo",
+                "Technical SEO": "technical-seo",
+                "Ecommerce SEO": "ecommerce-seo",
+                "E-Commerce SEO": "ecommerce-seo",
+                "Link Building": "link-building",
+                "PPC Advertising": "ppc-advertising",
+                "Social Media Marketing": "social-media-marketing",
+                "Social Media": "social-media-marketing",
+                "Content Marketing": "content-marketing",
+                "Web Design & Development": "web-design-development",
+                "Conversion Rate Optimization": "conversion-rate-optimization",
+              };
+              const slug = slugMap[service];
+              return slug ? (
+                <Link
+                  key={service}
+                  href={`/services/${slug}`}
+                  className="bg-white border border-gray-200 rounded-xl px-6 py-4 text-gray-900 font-medium hover:border-[#4361ee] hover:text-[#4361ee] transition-all shadow-sm"
+                >
+                  {service}
+                </Link>
+              ) : (
+                <div
+                  key={service}
+                  className="bg-white border border-gray-200 rounded-xl px-6 py-4 text-gray-900 font-medium hover:border-[#4361ee] hover:text-[#4361ee] transition-all shadow-sm"
+                >
+                  {service}
+                </div>
+              );
+            })}
           </div>
           <div className="text-center mt-8">
             <Link href="/services" className="text-[#4361ee] hover:underline font-semibold text-sm">View All Services →</Link>

@@ -172,7 +172,15 @@ export default async function LocationPage({ params }: PageProps<"/locations/[ci
                   Businesses in {loc.city} that invest in SEO and digital marketing now are building a competitive moat that latecomers will struggle to close. The local search landscape rewards early movers—once you own the top rankings for key {loc.city} search terms, it becomes increasingly difficult for competitors to displace you.
                 </p>
                 <p>
-                  Reveal Rank's local SEO strategies for {loc.city} businesses are built on three pillars: technical authority (ensuring Google can crawl, index, and understand your site), content relevance (creating the most helpful, thorough content for {loc.city}-specific searches), and off-page trust (earning the links and citations that signal local authority to search engines).
+                  Reveal Rank's{" "}
+                  <Link href="/services/local-seo" className="text-[#4361ee] hover:underline font-medium">local SEO</Link>{" "}
+                  strategies for {loc.city} businesses are built on three pillars:{" "}
+                  <Link href="/services/technical-seo" className="text-[#4361ee] hover:underline font-medium">technical authority</Link>{" "}
+                  (ensuring Google can crawl, index, and understand your site),{" "}
+                  <Link href="/services/content-marketing" className="text-[#4361ee] hover:underline font-medium">content relevance</Link>{" "}
+                  (creating the most helpful, thorough content for {loc.city}-specific searches), and{" "}
+                  <Link href="/services/link-building" className="text-[#4361ee] hover:underline font-medium">off-page trust</Link>{" "}
+                  (earning the links and citations that signal local authority to search engines).
                 </p>
               </div>
             </div>
@@ -180,11 +188,37 @@ export default async function LocationPage({ params }: PageProps<"/locations/[ci
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                 <h3 className="text-gray-900 font-bold mb-4">Key Industries in {loc.city}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {loc.industries.map((ind) => (
-                    <span key={ind} className="bg-[#4361ee]/10 border border-[#4361ee]/20 text-[#4361ee] px-3 py-1 rounded-full text-sm font-medium">
-                      {ind}
-                    </span>
-                  ))}
+                  {loc.industries.map((ind) => {
+                    const industrySlugMap: Record<string, string> = {
+                      "E-Commerce": "ecommerce",
+                      "Ecommerce": "ecommerce",
+                      "Retail": "ecommerce",
+                      "Healthcare": "healthcare",
+                      "Healthcare & Biotech": "healthcare",
+                      "Health & Wellness": "healthcare",
+                      "Real Estate": "real-estate",
+                      "Education": "education",
+                      "Hospitality": "hospitality",
+                      "Hospitality & Travel": "hospitality",
+                      "Tourism": "hospitality",
+                      "Food & Hospitality": "hospitality",
+                      "Legal": "legal",
+                      "Finance": "finance",
+                      "Finance & Banking": "finance",
+                      "Technology": "technology",
+                      "Technology & SaaS": "technology",
+                    };
+                    const slug = industrySlugMap[ind];
+                    return slug ? (
+                      <Link key={ind} href={`/industries/${slug}`} className="bg-[#4361ee]/10 border border-[#4361ee]/20 text-[#4361ee] px-3 py-1 rounded-full text-sm font-medium hover:bg-[#4361ee]/20 transition-colors">
+                        {ind}
+                      </Link>
+                    ) : (
+                      <span key={ind} className="bg-[#4361ee]/10 border border-[#4361ee]/20 text-[#4361ee] px-3 py-1 rounded-full text-sm font-medium">
+                        {ind}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
