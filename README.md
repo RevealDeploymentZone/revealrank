@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reveal Rank — Digital Marketing Agency
 
-## Getting Started
+**[Reveal Rank](https://www.revealrank.com)** is a full-service digital marketing agency helping businesses rank higher on Google and drive real, measurable results.
 
-First, run the development server:
+## 🚀 Our Services
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| Service | Description |
+|---------|-------------|
+| [SEO Services](https://www.revealrank.com/services/seo) | Full-scale search engine optimization to boost organic rankings |
+| [Local SEO](https://www.revealrank.com/services/local-seo) | Dominate local search results and Google Maps |
+| [PPC / Google Ads](https://www.revealrank.com/services/ppc) | High-ROI paid advertising campaigns |
+| [Web Design](https://www.revealrank.com/services/web-design) | Conversion-focused websites built to rank |
+| [Content Marketing](https://www.revealrank.com/services/content-marketing) | Strategic content that drives traffic and leads |
+| [Social Media Marketing](https://www.revealrank.com/services/social-media-marketing) | Build brand authority across all platforms |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📍 Locations We Serve
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We provide digital marketing services across major US cities including New York, Los Angeles, Chicago, Houston, Phoenix, and [many more](https://www.revealrank.com/locations).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏆 Industries We Serve
 
-## Learn More
+We specialize in SEO and marketing for [multiple industries](https://www.revealrank.com/industries) including Home Services, Healthcare, Legal, Real Estate, E-commerce, and more.
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact Us
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Website:** [www.revealrank.com](https://www.revealrank.com)
+- **Email:** outreach@revealrank.com
+- **Free Proposal:** [Get your free proposal](https://www.revealrank.com/contact)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built and maintained by [Reveal Rank](https://www.revealrank.com) — Your growth is our mission.*
