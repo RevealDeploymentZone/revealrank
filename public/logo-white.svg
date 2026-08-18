@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none">
+  <!-- Magnifying glass circle (open C shape) -->
+  <path d="M 55 70 A 42 42 0 1 1 95 112" stroke="#a3d437" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <!-- Handle of magnifying glass -->
+  <line x1="82" y1="105" x2="110" y2="140" stroke="#a3d437" stroke-width="16" stroke-linecap="round"/>
+  <!-- Arrow shaft going up-right through the glass -->
+  <line x1="78" y1="118" x2="148" y2="48" stroke="#a3d437" stroke-width="16" stroke-linecap="round"/>
+  <!-- Arrow head -->
+  <polyline points="115,48 148,48 148,81" stroke="#a3d437" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Text: REVEAL RANK -->
+  <text x="100" y="200" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="28" fill="#ffffff" letter-spacing="2">REVEAL RANK</text>
+</svg>

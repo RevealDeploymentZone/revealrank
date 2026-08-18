@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { industries } from "@/data/industries";
@@ -12,10 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-black tracking-tight">
-                <span className="text-white">Reveal</span>
-                <span className="text-[#4361ee]">Rank</span>
-              </span>
+              <Image src="/logo-white.svg" alt="Reveal Rank" width={110} height={85} />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Performance-driven SEO and digital marketing agency serving businesses across the United States. We deliver data-backed strategies that generate real traffic, leads, and revenue.

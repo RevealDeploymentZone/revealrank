@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { industries } from "@/data/industries";
@@ -36,11 +37,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-black tracking-tight">
-            <span className="text-gray-900">Reveal</span>
-            <span className="text-[#4361ee]">Rank</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo-horizontal.svg" alt="Reveal Rank" width={200} height={44} priority />
         </Link>
 
         {/* Desktop Nav */}
