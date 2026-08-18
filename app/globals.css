@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --color-blue: #4361ee;
+  --color-orange: #ff531a;
+  --color-green: #16bc4e;
+  --color-black: #101010;
+  --color-black-medium: #181a1b;
+  --color-black-light: #1f2122;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #101010;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+::-webkit-scrollbar-thumb {
+  background: #4361ee;
+  border-radius: 3px;
+}
