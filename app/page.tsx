@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.revealrank.com/og-home.png",
+        url: "https://www.revealrank.com/opengraph-image/",
         width: 1200,
         height: 630,
         alt: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
     description: "Data-driven SEO, PPC, content marketing & web development. 300%+ average traffic growth.",
-    images: ["https://www.revealrank.com/og-home.png"],
+    images: ["https://www.revealrank.com/opengraph-image/"],
     site: "@RevealRank",
   },
 };
