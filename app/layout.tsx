@@ -14,15 +14,6 @@ export const metadata: Metadata = {
   },
   description:
     "Reveal Rank is a performance-driven SEO and digital marketing agency serving businesses across the United States. We deliver data-backed SEO, PPC, content marketing, and web development that grows traffic, leads, and revenue.",
-  keywords: [
-    "SEO agency USA",
-    "digital marketing agency USA",
-    "SEO services",
-    "PPC management USA",
-    "content marketing agency",
-    "web design development USA",
-    "Reveal Rank",
-  ],
   authors: [{ name: "Reveal Rank", url: BASE_URL }],
   creator: "Reveal Rank",
   openGraph: {
@@ -53,9 +44,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
-  },
-  verification: {
-    google: "your-google-verification-code",
   },
 };
 
@@ -132,3 +120,4 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
