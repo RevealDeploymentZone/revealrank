@@ -17,12 +17,11 @@ export async function generateMetadata({ params }: PageProps<"/services/[slug]">
   return {
     title: `${service.title} in the USA – Reveal Rank`,
     description: `${service.description.slice(0, 155)}`,
-    keywords: [service.primaryKeyword, ...service.secondaryKeywords],
-    alternates: { canonical: `https://www.revealrank.com/services/${service.slug}` },
+    alternates: { canonical: `https://www.revealrank.com/services/${service.slug}/` },
     openGraph: {
       title: `${service.title} | Reveal Rank`,
       description: service.tagline,
-      url: `https://www.revealrank.com/services/${service.slug}`,
+      url: `https://www.revealrank.com/services/${service.slug}/`,
     },
   };
 }
@@ -39,7 +38,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
     provider: { "@type": "Organization", name: "Reveal Rank", url: "https://www.revealrank.com" },
     description: service.description,
     areaServed: { "@type": "Country", name: "United States" },
-    url: `https://www.revealrank.com/services/${service.slug}`,
+    url: `https://www.revealrank.com/services/${service.slug}/`,
   };
 
   const faqSchema = {
@@ -79,7 +78,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">{service.tagline}</h1>
             <p className="text-gray-600 text-xl leading-relaxed mb-6">{service.description}</p>
             <p className="text-gray-500 leading-relaxed mb-10">
-              At Reveal Rank, our {service.title.toLowerCase()} experts take a holistic, long-term view of your digital growth. We don't chase quick wins that disappear in the next algorithm update—we build genuine authority that compounds over time, delivering increasing returns on every dollar you invest in {service.shortTitle.toLowerCase()}.
+              At Reveal Rank, our {service.shortTitle} experts take a holistic, long-term view of your digital growth. We don&apos;t chase quick wins that disappear in the next algorithm update—we build genuine authority that compounds over time, delivering increasing returns on every dollar you invest in {service.shortTitle}.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -119,15 +118,15 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">What's Included</p>
+              <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">What&apos;s Included</p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Everything in Our {service.shortTitle} Service
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Our {service.title.toLowerCase()} service is a comprehensive, end-to-end solution. Every engagement begins with a deep audit, followed by a customised strategy, expert execution, and continuous optimisation to compound results over time.
+                Our {service.shortTitle} service is a comprehensive, end-to-end solution. Every engagement begins with a deep audit, followed by a customized strategy, expert execution, and continuous optimization to compound results over time.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8">
-                Unlike one-size-fits-all packages, every element of our {service.shortTitle.toLowerCase()} service is configured to your specific industry, market competition, and growth objectives. Nothing is templated—everything is built for your business.
+                Unlike one-size-fits-all packages, every element of our {service.shortTitle} service is configured to your specific industry, market competition, and growth objectives. Nothing is templated—everything is built for your business.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {service.features.map((feature) => (
@@ -204,34 +203,32 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why {service.shortTitle} Is Critical for Your Business</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                In today's digital-first world, {service.title.toLowerCase()} is no longer optional—it's the foundation of sustainable business growth. According to{" "}
-                <a href="https://www.thinkwithgoogle.com" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google's research</a>,
-                over 90% of purchase decisions now begin with an online search. Companies that invest in {service.shortTitle.toLowerCase()} consistently outperform competitors in visibility, lead volume, and long-term revenue. The businesses that delay are the ones left catching up while rivals capture market share.
+                In today&apos;s digital-first world, {service.shortTitle} is no longer optional—it&apos;s the foundation of sustainable business growth. Studies consistently show that the majority of purchase decisions begin with an online search, and the businesses that appear at the top capture most of that demand. Companies that invest in {service.shortTitle} consistently outperform competitors in visibility, lead volume, and long-term revenue.
               </p>
               <p>
-                What makes Reveal Rank's approach to {service.title.toLowerCase()} different is our relentless focus on outcomes. We don't report on activities—we report on results. Every month, you'll receive a clear breakdown of rankings gained, traffic increases, leads generated, and the tangible ROI being delivered against your investment. Our strategies are grounded in{" "}
-                <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google's quality guidelines</a>{" "}
+                What makes Reveal Rank&apos;s approach to {service.title} different is our relentless focus on outcomes. We don&apos;t report on activities—we report on results. Every month, you&apos;ll receive a clear breakdown of rankings gained, traffic increases, leads generated, and the tangible ROI being delivered against your investment. Our strategies are grounded in{" "}
+                <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google&apos;s quality guidelines</a>{" "}
                 and refined through continuous analysis using tools like{" "}
                 <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Google Search Console</a>{" "}
                 and{" "}
                 <a href="https://ahrefs.com" target="_blank" rel="noopener noreferrer" className="text-[#4361ee] hover:underline font-medium">Ahrefs</a>.
               </p>
               <p>
-                Our {service.shortTitle.toLowerCase()} strategies are designed to evolve with your business. As your goals grow and your market shifts, we continuously refine targeting, expand reach, and identify new opportunities. Whether you're in{" "}
+                Our {service.shortTitle} strategies are designed to evolve with your business. As your goals grow and your market shifts, we continuously refine targeting, expand reach, and identify new opportunities. Whether you&apos;re in{" "}
                 <Link href="/industries/ecommerce" className="text-[#4361ee] hover:underline font-medium">e-commerce</Link>,{" "}
                 <Link href="/industries/healthcare" className="text-[#4361ee] hover:underline font-medium">healthcare</Link>,{" "}
                 <Link href="/industries/technology" className="text-[#4361ee] hover:underline font-medium">technology</Link>, or{" "}
                 <Link href="/industries/finance" className="text-[#4361ee] hover:underline font-medium">financial services</Link>,
-                our approach is tailored to your industry's specific competitive dynamics—ensuring you're always ahead, not just keeping pace.
+                our approach is tailored to your industry&apos;s specific competitive dynamics—ensuring you&apos;re always ahead, not just keeping pace.
               </p>
               <p>
-                Every {service.shortTitle.toLowerCase()} engagement at Reveal Rank begins with a thorough audit of your current performance and competitive landscape. We benchmark against your top competitors using industry-leading tools, then build a roadmap with clear milestones, deliverables, and KPIs. This ensures accountability from day one and gives you a precise picture of what to expect and when.
+                Every {service.shortTitle} engagement at Reveal Rank begins with a thorough audit of your current performance and competitive landscape. We benchmark against your top competitors using industry-leading tools, then build a roadmap with clear milestones, deliverables, and KPIs. This ensures accountability from day one and gives you a precise picture of what to expect and when.
               </p>
             </div>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 { stat: "3–6 months", label: "Average time to measurable results" },
-                { stat: "98%", label: "Client satisfaction rate" },
+                { stat: "98%", label: "Client retention rate" },
                 { stat: "2+ years", label: "Average client retention" },
               ].map((item) => (
                 <div key={item.label} className="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
@@ -250,7 +247,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
           <div className="text-center mb-10">
             <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">Industry Expertise</p>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">We Deliver {service.shortTitle} Results Across Every Industry</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Deep sector knowledge means our {service.shortTitle.toLowerCase()} strategies reflect the unique search behaviour, compliance requirements, and competitive dynamics of your market.</p>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Deep sector knowledge means our {service.shortTitle} strategies reflect the unique search behavior, compliance requirements, and competitive dynamics of your market.</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {industries.map((ind) => (
@@ -273,7 +270,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
           <div className="text-center mb-16">
             <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">FAQs</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{service.shortTitle} FAQs</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Common questions about our {service.title.toLowerCase()} services—answered directly and honestly.</p>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Common questions about our {service.shortTitle} services—answered directly and honestly.</p>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
             {service.faqs.map((faq) => (
@@ -311,7 +308,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
 
       <CTASection
         title={`Ready to Grow with ${service.shortTitle}?`}
-        subtitle={`Get a free ${service.shortTitle.toLowerCase()} audit and customised strategy from Reveal Rank's certified experts. No obligation, no fluff—just clear, actionable recommendations delivered within 48 hours.`}
+        subtitle={`Get a free ${service.shortTitle} audit and customized strategy from Reveal Rank's certified experts. No obligation, no fluff—just clear, actionable recommendations delivered within 48 hours.`}
         primaryCTA={`Get Free ${service.shortTitle} Audit`}
       />
     </>
