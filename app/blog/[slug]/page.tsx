@@ -18,17 +18,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
+  const ogImageUrl = `https://www.revealrank.com/blog/${slug}/opengraph-image`;
   return {
-    title: `${post.title} | Reveal Rank Blog`,
+    title: `${post.title} | Reveal Rank`,
     description: post.excerpt,
+    keywords: [post.primaryKeyword, post.parentTopic, "seo", "digital marketing", "revealrank"],
+    authors: [{ name: post.author, url: "https://www.revealrank.com/about/" }],
     alternates: { canonical: `https://www.revealrank.com/blog/${slug}/` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishDate,
+      modifiedTime: post.publishDate,
       authors: [post.author],
       url: `https://www.revealrank.com/blog/${slug}/`,
+      siteName: "Reveal Rank",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [ogImageUrl],
+      site: "@RevealRank",
+      creator: "@RevealRank",
     },
   };
 }
