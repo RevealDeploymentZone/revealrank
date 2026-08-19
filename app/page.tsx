@@ -4,6 +4,7 @@ import CTASection from "@/components/CTASection";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { industries } from "@/data/industries";
+import { blogPosts } from "@/data/blog";
 
 export const metadata: Metadata = {
   title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
@@ -393,8 +394,97 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
+
+      {/* ── From the Blog ─────────────────────────────────────────── */}
       <section className="py-20 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
+          {/* Header */}
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+            <div>
+              <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">From the Blog</p>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">Trending SEO Guides</h2>
+            </div>
+            <Link
+              href="/blog/"
+              className="text-[#4361ee] font-semibold hover:underline text-sm whitespace-nowrap"
+            >
+              View all {blogPosts.length} articles →
+            </Link>
+          </div>
+
+          {(() => {
+            const sorted = [...blogPosts].sort(
+              (a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+            );
+            const featured = sorted[0];
+            const rest = sorted.slice(1, 7);
+            return (
+              <>
+                {/* Featured latest post */}
+                <Link
+                  href={`/blog/${featured.slug}/`}
+                  className="group flex flex-col md:flex-row gap-0 bg-white rounded-2xl border border-gray-200 hover:border-[#4361ee]/40 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300 overflow-hidden mb-8"
+                >
+                  {/* Color stripe */}
+                  <div className="w-full md:w-2 bg-[#4361ee] flex-shrink-0" />
+                  <div className="flex flex-col md:flex-row flex-1 p-7 md:p-8 gap-6 items-start md:items-center">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span className="bg-[#4361ee]/10 text-[#4361ee] text-xs font-bold px-3 py-1 rounded-full capitalize">
+                          {featured.parentTopic}
+                        </span>
+                        <span className="text-xs font-semibold text-[#ff531a] bg-[#ff531a]/10 px-3 py-1 rounded-full">
+                          🔥 Latest
+                        </span>
+                        <span className="text-xs text-gray-400">{featured.readTime} min read</span>
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-black text-gray-900 group-hover:text-[#4361ee] transition-colors leading-snug mb-3">
+                        {featured.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{featured.excerpt}</p>
+                    </div>
+                    <div className="flex-shrink-0 flex items-center gap-3">
+                      <span className="text-xs text-gray-400">
+                        {new Date(featured.publishDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                      </span>
+                      <span className="hidden md:inline-flex items-center gap-1 text-sm font-bold text-white bg-[#4361ee] px-5 py-2.5 rounded-xl group-hover:bg-[#3451de] transition-colors">
+                        Read now →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* 6-post grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {rest.map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}/`}
+                      className="group bg-white rounded-2xl border border-gray-200 hover:border-[#4361ee]/30 hover:shadow-lg hover:shadow-blue-50 transition-all duration-300 p-6 flex flex-col"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-semibold text-[#4361ee] bg-[#4361ee]/8 px-2.5 py-1 rounded-full capitalize">
+                          {post.parentTopic}
+                        </span>
+                        <span className="text-xs text-gray-400">{post.readTime} min</span>
+                      </div>
+                      <h3 className="text-[15px] font-bold text-gray-900 group-hover:text-[#4361ee] transition-colors leading-snug mb-3 flex-1 line-clamp-3">
+                        {post.title}
+                      </h3>
+                      <p className="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-50">
+                        {new Date(post.publishDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-[#4361ee] text-sm font-semibold uppercase tracking-widest mb-3">FAQs</p>
