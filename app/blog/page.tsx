@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.revealrank.com/blog/opengraph-image",
+        url: "https://www.revealrank.com/blog/opengraph-image/",
         width: 1200,
         height: 630,
         alt: "Reveal Rank SEO Blog",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SEO Blog | Reveal Rank — Free SEO Guides",
     description: "In-depth SEO & digital marketing guides from Reveal Rank.",
-    images: ["https://www.revealrank.com/blog/opengraph-image"],
+    images: ["https://www.revealrank.com/blog/opengraph-image/"],
     site: "@RevealRank",
   },
 };
