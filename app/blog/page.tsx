@@ -7,11 +7,29 @@ export const metadata: Metadata = {
   title: "SEO Blog — Guides, Strategies & Digital Marketing Tips | Reveal Rank",
   description:
     "Free SEO guides, technical tutorials, local SEO strategies, and digital marketing insights from Reveal Rank. Practical advice that drives real organic growth.",
+  keywords: ["seo blog", "seo guides", "technical seo", "local seo tips", "digital marketing blog", "revealrank blog"],
   alternates: { canonical: "https://www.revealrank.com/blog/" },
   openGraph: {
-    title: "SEO Blog | Reveal Rank",
-    description: "In-depth SEO & digital marketing guides from Reveal Rank.",
+    title: "SEO Blog | Reveal Rank — Free SEO Guides",
+    description: "In-depth SEO & digital marketing guides from Reveal Rank. Technical SEO, local SEO, link building, Google Ads and more.",
     url: "https://www.revealrank.com/blog/",
+    siteName: "Reveal Rank",
+    type: "website",
+    images: [
+      {
+        url: "https://www.revealrank.com/blog/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Reveal Rank SEO Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SEO Blog | Reveal Rank — Free SEO Guides",
+    description: "In-depth SEO & digital marketing guides from Reveal Rank.",
+    images: ["https://www.revealrank.com/blog/opengraph-image"],
+    site: "@RevealRank",
   },
 };
 
