@@ -10,12 +10,31 @@ export const metadata: Metadata = {
   title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
   description:
     "Reveal Rank is a performance-driven SEO and digital marketing agency serving businesses across the United States. We help brands dominate Google rankings, generate qualified leads, and grow revenue through data-backed strategies.",
+  keywords: ["seo agency usa", "digital marketing agency", "seo services", "technical seo", "local seo", "ppc management", "revealrank"],
+  authors: [{ name: "Reveal Rank", url: "https://www.revealrank.com" }],
   alternates: { canonical: "https://www.revealrank.com" },
   openGraph: {
     title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
     description:
       "Data-driven SEO, PPC, content marketing & web development. 300%+ average traffic growth. Serving 28+ major US cities.",
     url: "https://www.revealrank.com",
+    siteName: "Reveal Rank",
+    type: "website",
+    images: [
+      {
+        url: "https://www.revealrank.com/og-home.png",
+        width: 1200,
+        height: 630,
+        alt: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reveal Rank – Performance SEO & Digital Marketing Agency USA",
+    description: "Data-driven SEO, PPC, content marketing & web development. 300%+ average traffic growth.",
+    images: ["https://www.revealrank.com/og-home.png"],
+    site: "@RevealRank",
   },
 };
 
