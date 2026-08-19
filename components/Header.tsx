@@ -29,6 +29,7 @@ export default function Header() {
       href: "/industries",
       dropdown: industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}` })),
     },
+    { label: "Blog", href: "/blog", dropdown: null },
     { label: "Portfolio", href: "/portfolio", dropdown: null },
     { label: "About", href: "/about", dropdown: null },
     { label: "Contact", href: "/contact", dropdown: null },
