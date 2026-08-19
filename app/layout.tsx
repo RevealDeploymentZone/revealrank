@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MapSection from "@/components/MapSection";
 
-const BASE_URL = "https://www.revealrank.com";
+const BASE_URL = "https://revealrank.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
