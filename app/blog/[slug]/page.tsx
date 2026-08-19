@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
-  const ogImageUrl = `https://www.revealrank.com/blog/${slug}/opengraph-image`;
+  const ogImageUrl = `https://www.revealrank.com/blog/${slug}/opengraph-image/`;
   return {
     title: `${post.title} | Reveal Rank`,
     description: post.excerpt,
