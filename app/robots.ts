@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://revealrank.com/sitemap.xml",
+    sitemap: "https://www.revealrank.com/sitemap.xml",
   };
 }
+
