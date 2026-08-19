@@ -5,6 +5,20 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/locations/denver-co",
+        destination: "/locations/denver",
+        permanent: true,
+      },
+      {
+        source: "/locations/denver-co/",
+        destination: "/locations/denver/",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
