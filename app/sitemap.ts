@@ -3,7 +3,7 @@ import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { industries } from "@/data/industries";
 
-const BASE_URL = "https://revealrank.com";
+const BASE_URL = "https://www.revealrank.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
@@ -39,3 +39,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...servicePages, ...locationPages, ...industryPages];
 }
+
