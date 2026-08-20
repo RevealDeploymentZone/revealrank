@@ -39,6 +39,13 @@ export default function Header() {
     ],
     },
     { label: "Blog", href: "/blog", dropdown: null },
+    {
+      label: "Tools",
+      href: "/tools",
+      dropdown: [
+        { label: "AI Crawler Checker", href: "/tools/ai-crawler-checker" },
+      ],
+    },
     { label: "Portfolio", href: "/portfolio", dropdown: null },
     { label: "About", href: "/about", dropdown: null },
     { label: "Contact", href: "/contact", dropdown: null },
