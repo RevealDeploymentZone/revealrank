@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { industries, getIndustry } from "@/data/industries";
 import CTASection from "@/components/CTASection";
+import { getIndustryContent } from "@/data/industry-content";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export function generateStaticParams() {
@@ -29,6 +30,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
   const { slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) notFound();
+
+  const longContent = getIndustryContent(slug);
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -97,6 +100,35 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
           </div>
         </div>
       </section>
+
+      {/* Long-form industry content */}
+      {longContent && (
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="max-w-[860px] mx-auto px-4 lg:px-8">
+            <style>{`
+              .industry-body h2 { font-size:1.5rem;font-weight:800;color:#111827;margin:2.5rem 0 1rem;padding-top:0.5rem;border-top:2px solid #f3f4f6;line-height:1.3; }
+              .industry-body h3 { font-size:1.2rem;font-weight:700;color:#1f2937;margin:2rem 0 0.75rem; }
+              .industry-body p { font-size:1.0625rem;line-height:1.8;color:#374151;margin-bottom:1.25rem; }
+              .industry-body ul,.industry-body ol { padding-left:1.5rem;margin-bottom:1.25rem; }
+              .industry-body li { font-size:1rem;line-height:1.75;color:#374151;margin-bottom:0.4rem; }
+              .industry-body ul li { list-style-type:disc; }
+              .industry-body ol li { list-style-type:decimal; }
+              .industry-body a { color:#4361ee;text-decoration:none;font-weight:500;border-bottom:1px solid #4361ee40; }
+              .industry-body a:hover { color:#3451de; }
+              .industry-body strong { font-weight:700;color:#111827; }
+              .industry-body em { font-style:italic; }
+              .industry-body table { width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.9rem; }
+              .industry-body th { background:#4361ee;color:white;padding:0.75rem 1rem;text-align:left;font-weight:700; }
+              .industry-body td { padding:0.65rem 1rem;border-bottom:1px solid #f3f4f6;color:#374151; }
+              .industry-body tr:hover td { background:#f8faff; }
+            `}</style>
+            <div
+              className="industry-body"
+              dangerouslySetInnerHTML={{ __html: longContent }}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Why specialist marketing matters */}
       <section className="py-20 bg-gray-50">
