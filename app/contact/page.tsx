@@ -3,9 +3,9 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Reveal Rank – Get a Free SEO Audit & Strategy",
+  title: "Contact Reveal Rank – AI Visibility Audit & SEO Strategy",
   description:
-    "Get in touch with Reveal Rank for a free SEO audit and digital marketing strategy. We help businesses across the USA grow through data-driven SEO, PPC, and content marketing.",
+    "Get in touch with Reveal Rank. Start with a $997 AI Visibility Audit or enquire about our SEO, GEO, and AI Citation Programme services for US businesses.",
   alternates: { canonical: "https://www.revealrank.com/contact" },
 };
 
@@ -14,7 +14,7 @@ const contactSchema = {
   "@type": "ContactPage",
   name: "Contact Reveal Rank",
   url: "https://www.revealrank.com/contact",
-  description: "Contact Reveal Rank for a free SEO audit and digital marketing strategy consultation.",
+  description: "Contact Reveal Rank to start an AI Visibility Audit or discuss SEO and GEO strategy.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
@@ -36,28 +36,28 @@ export default function ContactPage() {
             {/* Left */}
             <div>
               <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                Let&apos;s Grow Your Business
+                Let&apos;s Talk About Your Growth
               </h1>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Ready to dominate search rankings and grow your business? Tell us about your goals and we&apos;ll deliver a free, no-obligation digital marketing strategy within 24 hours.
+                Whether you&apos;re starting with an AI Visibility Audit or ready to discuss a full SEO or GEO retainer — fill in the form and we&apos;ll respond within 24 business hours.
               </p>
 
               <div className="space-y-6 mb-10">
                 {[
                   {
-                    icon: "✅",
-                    title: "Free SEO Audit",
-                    body: "A comprehensive analysis of your website's technical health, keyword rankings, and growth opportunities.",
+                    icon: "🎯",
+                    title: "AI Visibility Audit — $997",
+                    body: "60 prompts across 6 AI engines, 3 competitors benchmarked, a full citation-rate baseline, and a prioritised fix list. Credited against month one of any retainer.",
                   },
                   {
                     icon: "📊",
-                    title: "Competitor Analysis",
-                    body: "See exactly how you stack up against your top competitors and where the biggest opportunities lie.",
+                    title: "Competitor & Gap Analysis",
+                    body: "See exactly how your brand stacks up on ChatGPT, Gemini, Perplexity, and Google — and where your competitors are winning citations you should own.",
                   },
                   {
                     icon: "🗺️",
-                    title: "Custom Growth Roadmap",
-                    body: "A prioritised action plan with specific recommendations tailored to your industry, goals, and budget.",
+                    title: "Custom GEO & SEO Roadmap",
+                    body: "A prioritised action plan covering content, schema, entity, link building, and AI-specific signals — tailored to your industry and budget.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
