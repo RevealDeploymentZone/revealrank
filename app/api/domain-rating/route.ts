@@ -69,8 +69,8 @@ async function fetchDR(domain: string): Promise<{ dr: number | null; licenseUrl:
     );
     if (!res.ok) return { dr: null, licenseUrl: "https://ahrefs.com/legal/domain-rating-license", error: `ahrefs_${res.status}` };
     const data = await res.json();
-    const dr = data?.domain?.domain_rating ?? null;
-    const licenseUrl = data?.meta?.license_url ?? "https://ahrefs.com/legal/domain-rating-license";
+    const dr = data?.domain_rating?.domain_rating ?? null;
+    const licenseUrl = data?.domain_rating?.license ?? "https://ahrefs.com/legal/domain-rating-license";
     return { dr: typeof dr === "number" ? Math.round(dr) : null, licenseUrl };
   } catch {
     return { dr: null, licenseUrl: "https://ahrefs.com/legal/domain-rating-license", error: "ahrefs_timeout" };
