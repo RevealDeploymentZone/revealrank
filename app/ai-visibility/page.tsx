@@ -253,8 +253,8 @@ export default function AIVisibilityPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { value: "8", label: "AI Platforms Optimized" },
-              { value: "60%", label: "of Searches Now Use AI Answers" },
-              { value: "3×", label: "More Qualified Leads via AI Citations" },
+              { value: ">40%", label: "Google Searches Now End Zero-Click" },
+              { value: "$997", label: "Flat-Rate Audit — No Hidden Fees" },
               { value: "2026", label: "The Year GEO Became Non-Optional" },
             ].map((stat) => (
               <div key={stat.label}>
@@ -387,7 +387,7 @@ export default function AIVisibilityPage() {
               {
                 icon: "📉",
                 title: "Traditional Search CTR Is Falling",
-                body: "Google's own AI Overviews answer questions before users scroll to any organic result. Studies show zero-click searches now account for over 60% of all Google queries. If your content is not in the AI answer, you are losing traffic you used to get automatically.",
+                body: "Google's own AI Overviews answer questions before users scroll to any organic result. Independent research (SparkToro, 2024) found that over 40% of Google searches now end without a click. If your content is not in the AI answer, you are losing traffic you used to get automatically.",
               },
               {
                 icon: "🛍️",
@@ -477,7 +477,7 @@ export default function AIVisibilityPage() {
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="text-gray-900 font-bold text-lg">{step.title}</h3>
                     {i === 0 && (
-                      <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded-full">Free</span>
+                      <span className="bg-[#4361ee]/10 text-[#4361ee] text-xs font-semibold px-2 py-0.5 rounded-full">$997</span>
                     )}
                   </div>
                   <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
@@ -516,6 +516,7 @@ export default function AIVisibilityPage() {
               { label: "Technical SEO", href: "/services/technical-seo/", icon: "⚙️" },
               { label: "Content Marketing", href: "/services/content-marketing/", icon: "✍️" },
               { label: "Link Building", href: "/services/link-building/", icon: "🔗" },
+              { label: "AI Citation Programme", href: "/ai-citation-programme/", icon: "🎯" },
             ].map((s) => (
               <Link
                 key={s.href}
@@ -534,8 +535,8 @@ export default function AIVisibilityPage() {
 
       <CTASection
         title="Ready to Be the Answer AI Gives Your Customers?"
-        subtitle="We'll audit your brand's current AI visibility across all major platforms and show you exactly where you're missing citations — and how to fix it."
-        primaryCTA="Get Free AI Visibility Audit"
+        subtitle="Start with a $997 AI Visibility Audit — 60 prompts across 6 engines, 3 competitors benchmarked, and a prioritised fix list. Credited in full against month one of any retainer."
+        primaryCTA="Start with a $997 Audit →"
         primaryHref="/contact/"
       />
     </>
