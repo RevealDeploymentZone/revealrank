@@ -249,7 +249,9 @@ async function checkDomain(domain: string): Promise<DRResult> {
     licenseUrl: drResult.licenseUrl,
     timestamp: new Date().toISOString(),
     aiAccess: aiResult,
-    ...v,
+    verdict: v.verdict,
+    verdictTitle: v.title,
+    verdictBody: v.body,
   };
 }
 
