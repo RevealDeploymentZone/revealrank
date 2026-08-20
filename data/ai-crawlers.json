@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "last_reviewed": "2026-08-20",
+  "bots": [
+    {
+      "token": "OAI-SearchBot",
+      "vendor": "OpenAI",
+      "surface": "ChatGPT Search",
+      "category": "retrieval",
+      "severity": "critical",
+      "consequence": "Your pages cannot be cited in ChatGPT Search answers.",
+      "docs": "https://platform.openai.com/docs/bots"
+    },
+    {
+      "token": "GPTBot",
+      "vendor": "OpenAI",
+      "surface": "Model training",
+      "category": "training",
+      "severity": "moderate",
+      "consequence": "Your content will not be included in future OpenAI model training.",
+      "docs": "https://platform.openai.com/docs/bots"
+    },
+    {
+      "token": "ChatGPT-User",
+      "vendor": "OpenAI",
+      "surface": "ChatGPT browsing",
+      "category": "user_fetch",
+      "severity": "high",
+      "consequence": "ChatGPT cannot open your pages when a user explicitly asks it to.",
+      "note": "OpenAI documents that because these fetches are user-initiated, robots.txt may not apply.",
+      "docs": "https://platform.openai.com/docs/bots"
+    },
+    {
+      "token": "Claude-SearchBot",
+      "vendor": "Anthropic",
+      "surface": "Claude search",
+      "category": "retrieval",
+      "severity": "critical",
+      "consequence": "Your pages cannot be cited in Claude's search results."
+    },
+    {
+      "token": "ClaudeBot",
+      "vendor": "Anthropic",
+      "surface": "Model training",
+      "category": "training",
+      "severity": "moderate",
+      "consequence": "Your content will not be included in future Anthropic model training."
+    },
+    {
+      "token": "Claude-User",
+      "vendor": "Anthropic",
+      "surface": "Claude browsing",
+      "category": "user_fetch",
+      "severity": "high",
+      "consequence": "Claude cannot open your pages on a user's request."
+    },
+    {
+      "token": "PerplexityBot",
+      "vendor": "Perplexity",
+      "surface": "Perplexity",
+      "category": "retrieval",
+      "severity": "critical",
+      "consequence": "Your site is ineligible for Perplexity citations."
+    },
+    {
+      "token": "Perplexity-User",
+      "vendor": "Perplexity",
+      "surface": "Perplexity",
+      "category": "user_fetch",
+      "severity": "moderate",
+      "consequence": "Blocks user-directed Perplexity fetches.",
+      "note": "Perplexity documents that this agent may ignore robots.txt when a user supplies a specific URL."
+    },
+    {
+      "token": "Google-Extended",
+      "vendor": "Google",
+      "surface": "Gemini / Vertex AI",
+      "category": "training",
+      "severity": "moderate",
+      "consequence": "Your content is excluded from Gemini and Vertex AI training.",
+      "note": "This is a robots.txt product token, not a crawler. It never appears in server logs. Blocking it does NOT affect Google Search rankings."
+    },
+    {
+      "token": "Applebot-Extended",
+      "vendor": "Apple",
+      "surface": "Apple Intelligence",
+      "category": "training",
+      "severity": "low",
+      "consequence": "Excluded from Apple Intelligence training.",
+      "note": "Product token only — never appears in server logs."
+    },
+    {
+      "token": "Amazonbot",
+      "vendor": "Amazon",
+      "surface": "Alexa / Rufus",
+      "category": "retrieval",
+      "severity": "moderate",
+      "consequence": "Reduced visibility in Amazon AI surfaces."
+    },
+    {
+      "token": "meta-externalagent",
+      "vendor": "Meta",
+      "surface": "Meta AI",
+      "category": "training",
+      "severity": "moderate",
+      "consequence": "Excluded from Meta AI training data."
+    },
+    {
+      "token": "Meta-ExternalFetcher",
+      "vendor": "Meta",
+      "surface": "Meta AI",
+      "category": "user_fetch",
+      "severity": "low",
+      "consequence": "Blocks user-directed Meta AI fetches."
+    },
+    {
+      "token": "CCBot",
+      "vendor": "Common Crawl",
+      "surface": "Open dataset",
+      "category": "dataset",
+      "severity": "low",
+      "consequence": "Excluded from Common Crawl, a dataset used to train many models.",
+      "note": "Mixed compliance record."
+    },
+    {
+      "token": "Bytespider",
+      "vendor": "ByteDance",
+      "surface": "Doubao",
+      "category": "training",
+      "severity": "low",
+      "consequence": "Excluded from ByteDance training.",
+      "note": "No official vendor documentation. Documented history of ignoring robots.txt."
+    },
+    {
+      "token": "cohere-ai",
+      "vendor": "Cohere",
+      "surface": "Cohere models",
+      "category": "training",
+      "severity": "low",
+      "consequence": "Excluded from Cohere training."
+    },
+    {
+      "token": "DuckAssistBot",
+      "vendor": "DuckDuckGo",
+      "surface": "DuckAssist",
+      "category": "retrieval",
+      "severity": "low",
+      "consequence": "Ineligible for DuckAssist answers."
+    },
+    {
+      "token": "MistralAI-User",
+      "vendor": "Mistral",
+      "surface": "Le Chat",
+      "category": "user_fetch",
+      "severity": "low",
+      "consequence": "Blocks user-directed Mistral fetches."
+    }
+  ],
+  "legacy": [
+    { "token": "anthropic-ai", "note": "Deprecated alias for ClaudeBot" },
+    { "token": "claude-web", "note": "Deprecated alias for ClaudeBot" },
+    { "token": "FacebookBot", "note": "Deprecated; Meta now uses meta-externalagent" },
+    { "token": "GoogleOther", "note": "Deprecated Google general-purpose crawler" }
+  ]
+}
