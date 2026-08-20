@@ -45,7 +45,6 @@ export default function Header() {
       dropdown: [
         { label: "AI Crawler Checker", href: "/tools/ai-crawler-checker" },
         { label: "Domain Rating Checker", href: "/tools/domain-rating-checker" },
-        { label: "AI Draft Editor", href: "/tools/ai-draft-editor" },
         { label: "AI Content Detector", href: "/tools/ai-detector" },
       ],
     },
