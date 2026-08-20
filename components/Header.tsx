@@ -44,6 +44,7 @@ export default function Header() {
       href: "/tools",
       dropdown: [
         { label: "AI Crawler Checker", href: "/tools/ai-crawler-checker" },
+        { label: "Domain Rating Checker", href: "/tools/domain-rating-checker" },
       ],
     },
 
