@@ -46,9 +46,7 @@ export default function Header() {
         { label: "AI Crawler Checker", href: "/tools/ai-crawler-checker" },
       ],
     },
-    { label: "Portfolio", href: "/portfolio", dropdown: null },
-    { label: "About", href: "/about", dropdown: null },
-    { label: "Contact", href: "/contact", dropdown: null },
+
   ];
 
   return (
@@ -60,7 +58,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5">
           {navItems.map((item) => (
             <div
               key={item.label}
