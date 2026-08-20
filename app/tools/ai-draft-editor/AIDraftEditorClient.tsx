@@ -29,7 +29,7 @@ interface EditorResult {
   metrics: { original: TextMetrics; edited: TextMetrics };
 }
 
-// ── Constants ──────────────────────────────────────────────────────────────────
+// ── Constants ─────────────────────────────────────────────────────────────────
 
 const MAX_WORDS = 1500;
 
@@ -63,7 +63,11 @@ function renderTextAsHtml(text: string): string {
   );
   return highlighted
     .split(/\n/)
-    .map(line => line.trim() === "" ? "<div class='h-3'></div>" : `<p class="mb-3 leading-relaxed">${line}</p>`)
+    .map(line =>
+      line.trim() === ""
+        ? "<div class='h-3'></div>"
+        : `<p class="mb-3 leading-relaxed">${line}</p>`
+    )
     .join("");
 }
 
@@ -87,59 +91,46 @@ function MetricRow({
   );
 }
 
-// ── Main component ─────────────────────────────────────────────────────────────
+// ── Main component ────────────────────────────────────────────────────────────
 
 export default function AIDraftEditorClient() {
-  const [email, setEmail]           = useState("");
-  const [emailLocked, setEmailLocked] = useState(false);
-  const [draft, setDraft]           = useState("");
-  const [loading, setLoading]       = useState(false);
-  const [result, setResult]         = useState<EditorResult | null>(null);
-  const [error, setError]           = useState<string | null>(null);
+  const [email, setEmail]     = useState("");
+  const [draft, setDraft]     = useState("");
+  const [loading, setLoading] = useState(false);
+  const [result, setResult]   = useState<EditorResult | null>(null);
+  const [error, setError]     = useState<string | null>(null);
   const [activePanel, setActivePanel] = useState<"original" | "edited">("edited");
-  const [activeTab, setActiveTab]   = useState<"diff" | "changes" | "metrics" | "flags">("diff");
+  const [activeTab, setActiveTab]     = useState<"diff" | "changes" | "metrics" | "flags">("diff");
 
   const wc        = countWords(draft);
   const overLimit = wc > MAX_WORDS;
 
-  // ── Email gate ───────────────────────────────────────────────────────────────
-
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!EMAIL_RE.test(email.trim())) { setError("Please enter a valid email address."); return; }
+    if (!draft.trim() || overLimit) return;
+    if (!EMAIL_RE.test(email.trim())) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setLoading(true);
     setError(null);
-    setEmailLocked(true);
+    setResult(null);
+    try {
+      const res = await fetch("/api/ai-draft-editor", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ draft, email: email.trim() }),
+      });
+      const data = await res.json();
+      if (!res.ok) setError(data.error ?? "Something went wrong.");
+      else { setResult(data); setActiveTab("diff"); }
+    } catch {
+      setError("Network error — please try again.");
+    }
+    setLoading(false);
   };
 
-  if (!emailLocked) {
-    return (
-      <div className="max-w-lg">
-        <p className="text-gray-400 text-sm mb-5">
-          Enter your email to start. No spam — this keeps the tool free by preventing automated misuse.
-        </p>
-        <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
-          <input
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="you@company.com"
-            className="flex-1 bg-gray-800 border border-gray-700 focus:border-[#4361ee] text-white rounded-xl px-4 py-3.5 text-sm outline-none transition-colors placeholder-gray-600"
-            autoComplete="email"
-          />
-          <button
-            type="submit"
-            className="bg-[#4361ee] hover:bg-[#3451de] text-white font-bold px-6 py-3.5 rounded-xl text-sm transition-all flex-shrink-0"
-          >
-            Continue →
-          </button>
-        </form>
-        {error && <p className="text-red-400 text-xs mt-2">{error}</p>}
-        <p className="text-gray-600 text-xs mt-3">3 free edits per day · No account needed</p>
-      </div>
-    );
-  }
-
-  // ── Results view ──────────────────────────────────────────────────────────────
+  // ── Results view ──────────────────────────────────────────────────────────
 
   if (result) {
     const { changes, flags, metrics } = result;
@@ -165,7 +156,7 @@ export default function AIDraftEditorClient() {
               <span className="text-orange-400 text-sm font-bold">
                 {orig.fillerWords - edit.fillerWords > 0 ? `−${orig.fillerWords - edit.fillerWords}` : "0"}
               </span>
-              <span className="text-gray-400 text-xs">filler words</span>
+              <span className="text-gray-400 text-xs">filler words removed</span>
             </div>
           )}
           {flags.length > 0 && (
@@ -201,10 +192,9 @@ export default function AIDraftEditorClient() {
           </div>
         </div>
 
-        {/* ── Diff panel ─────────────────────────────────────────────────────── */}
+        {/* Diff panel */}
         {activeTab === "diff" && (
           <div>
-            {/* Mobile toggle */}
             <div className="flex gap-2 mb-4 md:hidden">
               {(["original", "edited"] as const).map(p => (
                 <button
@@ -218,9 +208,7 @@ export default function AIDraftEditorClient() {
                 </button>
               ))}
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Original */}
               <div className={activePanel !== "original" ? "hidden md:block" : ""}>
                 <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-3">Original</p>
                 <div
@@ -228,8 +216,6 @@ export default function AIDraftEditorClient() {
                   dangerouslySetInnerHTML={{ __html: renderTextAsHtml(draft) }}
                 />
               </div>
-
-              {/* Edited */}
               <div className={activePanel !== "edited" ? "hidden md:block" : ""}>
                 <p className="text-[#7b93ff] text-xs font-bold uppercase tracking-wider mb-3">Edited</p>
                 <div
@@ -238,7 +224,6 @@ export default function AIDraftEditorClient() {
                 />
               </div>
             </div>
-
             <div className="mt-3 flex justify-end">
               <button
                 onClick={() => navigator.clipboard?.writeText(result.edited)}
@@ -250,7 +235,7 @@ export default function AIDraftEditorClient() {
           </div>
         )}
 
-        {/* ── Change log ─────────────────────────────────────────────────────── */}
+        {/* Change log */}
         {activeTab === "changes" && (
           <div className="space-y-2">
             {changes.length === 0 ? (
@@ -280,7 +265,7 @@ export default function AIDraftEditorClient() {
           </div>
         )}
 
-        {/* ── Metrics ────────────────────────────────────────────────────────── */}
+        {/* Metrics */}
         {activeTab === "metrics" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -300,15 +285,13 @@ export default function AIDraftEditorClient() {
           </div>
         )}
 
-        {/* ── Flags panel ────────────────────────────────────────────────────── */}
+        {/* Flags */}
         {activeTab === "flags" && (
           <div className="space-y-4">
             {flags.length === 0 ? (
               <div className="bg-green-950/30 border border-green-800 rounded-xl p-5">
                 <p className="text-green-400 font-bold text-sm mb-1">No vague claims detected</p>
-                <p className="text-gray-400 text-sm">
-                  All claims in your draft appear specific enough. No [SPECIFIC NEEDED] markers were inserted.
-                </p>
+                <p className="text-gray-400 text-sm">All claims appear specific enough. No [SPECIFIC NEEDED] markers were inserted.</p>
               </div>
             ) : (
               <>
@@ -317,10 +300,9 @@ export default function AIDraftEditorClient() {
                     {flags.length} claim{flags.length !== 1 ? "s" : ""} need{flags.length === 1 ? "s" : ""} supporting data
                   </p>
                   <p className="text-gray-400 text-sm">
-                    These are places where a specific figure, timeframe, or example would make the copy credible. The editor cannot invent them — that is your job.
+                    These are places where a specific figure, timeframe, or example would make the copy credible. The editor cannot invent them.
                   </p>
                 </div>
-
                 <div className="space-y-2">
                   {flags.map((flag, i) => (
                     <div key={i} className="flex items-start gap-3 bg-gray-900 border border-gray-800 rounded-xl p-4">
@@ -329,19 +311,13 @@ export default function AIDraftEditorClient() {
                     </div>
                   ))}
                 </div>
-
                 {flags.length >= 3 && (
                   <div className="bg-[#4361ee]/10 border border-[#4361ee]/30 rounded-xl p-5">
-                    <p className="text-white font-black text-sm mb-2">
-                      This draft needs original data, not better wording.
-                    </p>
+                    <p className="text-white font-black text-sm mb-2">This draft needs original data, not better wording.</p>
                     <p className="text-gray-300 text-sm mb-4">
-                      {flags.length} claims have no supporting evidence. Editing rhythm and removing filler helps — but unsupported claims stay weak regardless of how well they are written. That is what our content service addresses.
+                      {flags.length} unsupported claims were flagged. Better rhythm and fewer filler words help — but weak claims stay weak. That is what our content service addresses.
                     </p>
-                    <Link
-                      href="/services/content-marketing/"
-                      className="inline-flex items-center gap-2 bg-[#4361ee] text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-[#3451de] transition-all"
-                    >
+                    <Link href="/services/content-marketing/" className="inline-flex items-center gap-2 bg-[#4361ee] text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-[#3451de] transition-all">
                       See our content service →
                     </Link>
                   </div>
@@ -354,33 +330,17 @@ export default function AIDraftEditorClient() {
     );
   }
 
-  // ── Draft input ───────────────────────────────────────────────────────────────
+  // ── Input form (textarea + email in one step) ─────────────────────────────
 
   return (
-    <form onSubmit={async (e) => {
-      e.preventDefault();
-      if (!draft.trim() || overLimit) return;
-      setLoading(true);
-      setError(null);
-      setResult(null);
-      try {
-        const res = await fetch("/api/ai-draft-editor", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ draft, email }),
-        });
-        const data = await res.json();
-        if (!res.ok) setError(data.error ?? "Something went wrong.");
-        else { setResult(data); setActiveTab("diff"); }
-      } catch { setError("Network error — please try again."); }
-      setLoading(false);
-    }} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Textarea */}
       <div className="relative">
         <textarea
           value={draft}
           onChange={e => setDraft(e.target.value)}
-          placeholder={"Paste your AI-drafted blog post, landing page copy, or email here.\n\nThe editor will:\n• Fix sentence rhythm\n• Strip filler vocabulary\n• Flag vague claims with [SPECIFIC NEEDED]\n• Return a full change log explaining every edit"}
-          rows={13}
+          placeholder={"Paste your AI-drafted blog post, landing page, or email here.\n\nThe editor will fix rhythm, strip filler vocabulary, flag vague claims, and return a full change log."}
+          rows={12}
           className={`w-full bg-gray-800 border ${overLimit ? "border-red-600" : "border-gray-700"} focus:border-[#4361ee] text-white rounded-xl px-5 py-4 text-sm leading-relaxed outline-none transition-colors placeholder-gray-600 resize-none`}
           disabled={loading}
           spellCheck={false}
@@ -392,31 +352,25 @@ export default function AIDraftEditorClient() {
 
       {overLimit && (
         <p className="text-red-400 text-xs">
-          Draft is {wc - MAX_WORDS} words over the limit. Shorten it or split it into sections.
+          Draft is {wc - MAX_WORDS} words over the limit. Split it into sections and run each separately.
         </p>
       )}
 
-      {error && (
-        <div className="bg-red-950/40 border border-red-800 rounded-xl px-4 py-3 text-red-300 text-sm">{error}</div>
-      )}
-
-      <div className="flex items-center justify-between gap-4 flex-wrap">
-        <p className="text-gray-600 text-xs">
-          Editing as{" "}
-          <span className="text-gray-400">{email}</span>
-          {" · "}
-          <button
-            type="button"
-            onClick={() => { setEmailLocked(false); setError(null); }}
-            className="underline hover:text-gray-300 transition-colors"
-          >
-            change
-          </button>
-        </p>
+      {/* Email + submit row */}
+      <div className="flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder="your@email.com  (3 free edits/day)"
+          className="flex-1 bg-gray-800 border border-gray-700 focus:border-[#4361ee] text-white rounded-xl px-4 py-3.5 text-sm outline-none transition-colors placeholder-gray-600"
+          autoComplete="email"
+          disabled={loading}
+        />
         <button
           type="submit"
           disabled={loading || !draft.trim() || overLimit}
-          className="bg-[#4361ee] hover:bg-[#3451de] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-all flex items-center gap-2 flex-shrink-0"
+          className="bg-[#4361ee] hover:bg-[#3451de] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-all flex items-center gap-2 justify-center flex-shrink-0"
         >
           {loading ? (
             <>
@@ -429,6 +383,10 @@ export default function AIDraftEditorClient() {
           ) : "Edit Draft →"}
         </button>
       </div>
+
+      {error && (
+        <div className="bg-red-950/40 border border-red-800 rounded-xl px-4 py-3 text-red-300 text-sm">{error}</div>
+      )}
     </form>
   );
 }
