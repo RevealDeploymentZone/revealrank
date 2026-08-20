@@ -5,6 +5,7 @@ import Image from "next/image";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { industries } from "@/data/industries";
+import { aiPlatforms } from "@/data/ai-platforms";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,6 +29,11 @@ export default function Header() {
       label: "Industries",
       href: "/industries",
       dropdown: industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}` })),
+    },
+    {
+      label: "AI Visibility",
+      href: "/ai-visibility",
+      dropdown: aiPlatforms.map((p) => ({ label: p.name, href: `/ai-visibility/${p.slug}` })),
     },
     { label: "Blog", href: "/blog", dropdown: null },
     { label: "Portfolio", href: "/portfolio", dropdown: null },
