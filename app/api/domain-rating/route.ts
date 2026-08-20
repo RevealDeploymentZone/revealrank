@@ -223,6 +223,7 @@ async function checkDomain(domain: string): Promise<DRResult> {
   const [drResult, aiResult] = await Promise.all([fetchDR(domain), quickCrawlerCheck(domain)]);
 
   if (drResult.error || drResult.dr === null) {
+    const aiOk = aiResult.score >= 75;
     return {
       domain,
       dr: null,
@@ -231,9 +232,13 @@ async function checkDomain(domain: string): Promise<DRResult> {
       licenseUrl: drResult.licenseUrl,
       timestamp: new Date().toISOString(),
       aiAccess: aiResult,
-      verdict: "low_dr_blocked",
-      verdictTitle: "",
-      verdictBody: "",
+      verdict: aiOk ? "low_dr_accessible" : "low_dr_blocked",
+      verdictTitle: aiOk
+        ? "AI crawlers can reach your site."
+        : "AI crawlers are blocked from your site.",
+      verdictBody: aiOk
+        ? "Your site is accessible to AI retrieval bots — that is the necessary condition for AI citations. Domain Rating data is unavailable without an Ahrefs API key."
+        : "AI retrieval bots cannot reach your site. Fix your robots.txt to unblock them — this is the highest-priority step before worrying about domain authority.",
       error: drResult.error,
     };
   }
