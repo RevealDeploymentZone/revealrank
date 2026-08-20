@@ -33,7 +33,10 @@ export default function Header() {
     {
       label: "AI Visibility",
       href: "/ai-visibility",
-      dropdown: aiPlatforms.map((p) => ({ label: p.name, href: `/ai-visibility/${p.slug}` })),
+      dropdown: [
+      { label: "🎯 AI Citation Programme", href: "/ai-citation-programme" },
+      ...aiPlatforms.map((p) => ({ label: p.name, href: `/ai-visibility/${p.slug}` })),
+    ],
     },
     { label: "Blog", href: "/blog", dropdown: null },
     { label: "Portfolio", href: "/portfolio", dropdown: null },
