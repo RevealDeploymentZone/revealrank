@@ -35,8 +35,8 @@ export default function ContactForm() {
             <path d="M8 16l6 6 10-12" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-        <p className="text-gray-500 mb-6">We've received your request. Expect a response within 24 business hours.</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">Request Received!</h3>
+        <p className="text-gray-500 mb-6">We'll review your details and respond within 24 business hours.</p>
         <button
           onClick={() => setStatus("idle")}
           className="text-[#4361ee] font-semibold text-sm hover:underline"
@@ -49,7 +49,8 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Proposal</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-1">Start Your Enquiry</h2>
+      <p className="text-gray-400 text-sm mb-6">Tell us what you need — we'll get back within 24 hours.</p>
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
@@ -106,20 +107,31 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-gray-600 text-sm font-medium mb-2">Primary Service Interest</label>
+          <label className="block text-gray-600 text-sm font-medium mb-2">What are you interested in? *</label>
           <select
             name="service"
+            required
             className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
           >
             <option value="">Select a service...</option>
-            <option value="seo">SEO Services</option>
-            <option value="local-seo">Local SEO</option>
-            <option value="ppc">PPC / Google Ads</option>
-            <option value="social">Social Media Marketing</option>
-            <option value="content">Content Marketing</option>
-            <option value="web">Web Design & Development</option>
-            <option value="cro">Conversion Rate Optimisation</option>
-            <option value="other">Other / Full Package</option>
+            <optgroup label="AI Visibility">
+              <option value="ai-audit">AI Visibility Audit ($997 one-time)</option>
+              <option value="ai-citation-core">AI Citation Programme — Core ($2,500/mo)</option>
+              <option value="ai-citation-scale">AI Citation Programme — Scale ($5,000/mo)</option>
+              <option value="ai-citation-enterprise">AI Citation Programme — Enterprise (custom)</option>
+            </optgroup>
+            <optgroup label="SEO & Digital Marketing">
+              <option value="seo">SEO Services</option>
+              <option value="local-seo">Local SEO</option>
+              <option value="technical-seo">Technical SEO</option>
+              <option value="content">Content Marketing</option>
+              <option value="link-building">Link Building</option>
+              <option value="ppc">PPC / Google Ads</option>
+              <option value="social">Social Media Marketing</option>
+              <option value="web">Web Design & Development</option>
+              <option value="cro">Conversion Rate Optimisation</option>
+            </optgroup>
+            <option value="other">Not sure — let's talk</option>
           </select>
         </div>
 
@@ -130,10 +142,11 @@ export default function ContactForm() {
             className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
           >
             <option value="">Select budget range...</option>
-            <option value="500-1000">$500 – $1,000</option>
-            <option value="1000-2500">$1,000 – $2,500</option>
-            <option value="2500-5000">$2,500 – $5,000</option>
-            <option value="5000+">$5,000+</option>
+            <option value="997-one-time">$997 one-time (Audit only)</option>
+            <option value="1000-2500">$1,000 – $2,500/month</option>
+            <option value="2500-5000">$2,500 – $5,000/month</option>
+            <option value="5000+">$5,000+/month</option>
+            <option value="unsure">Not sure yet</option>
           </select>
         </div>
 
@@ -143,12 +156,12 @@ export default function ContactForm() {
             name="message"
             rows={4}
             className="w-full bg-gray-50 border border-gray-200 focus:border-[#4361ee] text-gray-900 rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none"
-            placeholder="Describe your business, current challenges, and what you want to achieve..."
+            placeholder="Describe your business, current challenges, and what you want to achieve on AI platforms or in search..."
           />
         </div>
 
         {status === "error" && (
-          <p className="text-red-500 text-sm text-center">Something went wrong. Please email us directly at outreach@revealrank.com</p>
+          <p className="text-red-500 text-sm text-center">Something went wrong. Please email us at outreach@revealrank.com</p>
         )}
 
         <button
@@ -156,7 +169,7 @@ export default function ContactForm() {
           disabled={status === "sending"}
           className="w-full bg-[#4361ee] hover:bg-[#3451de] disabled:opacity-60 text-white font-bold py-4 rounded-xl text-lg transition-all hover:scale-[1.02] shadow-md shadow-blue-100"
         >
-          {status === "sending" ? "Sending..." : "Get My Free Proposal →"}
+          {status === "sending" ? "Sending..." : "Send My Request →"}
         </button>
         <p className="text-gray-400 text-xs text-center">
           No spam. No commitment. Response within 24 business hours.
