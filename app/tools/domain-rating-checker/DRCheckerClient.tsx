@@ -88,50 +88,44 @@ function DRBar({ dr, color }: { dr: number; color: string }) {
 function ResultCard({ r }: { r: DRResult }) {
   const style = BAND_STYLES[r.bandColor] ?? BAND_STYLES.gray;
 
-  if (r.error && r.dr === null) {
-    const msg = r.error === "api_key_missing"
-      ? "Ahrefs API key not configured. Please contact site admin."
-      : r.error === "ahrefs_timeout"
-      ? "Ahrefs API timed out. Please try again."
-      : `Could not fetch DR (${r.error}).`;
-    return (
-      <div className="bg-red-950/30 border border-red-800 rounded-2xl p-6">
-        <p className="text-red-300 font-semibold text-sm">{r.domain}</p>
-        <p className="text-red-400 text-xs mt-1">{msg}</p>
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-5">
-      {/* DR Score */}
-      <div className={`border-2 rounded-2xl p-7 ${style.ring} ${style.bg}`}>
-        <div className="flex items-end gap-4 mb-3">
-          <div className={`text-7xl font-black leading-none ${style.text}`}>
-            {r.dr ?? "—"}
+      {/* DR Score — hidden if unavailable */}
+      {r.dr !== null ? (
+        <div className={`border-2 rounded-2xl p-7 ${style.ring} ${style.bg}`}>
+          <div className="flex items-end gap-4 mb-3">
+            <div className={`text-7xl font-black leading-none ${style.text}`}>{r.dr}</div>
+            <div className="pb-2">
+              <div className={`text-xl font-black ${style.text}`}>{r.band}</div>
+              <div className="text-gray-500 text-xs">Domain Rating · 0–100</div>
+            </div>
           </div>
-          <div className="pb-2">
-            <div className={`text-xl font-black ${style.text}`}>{r.band}</div>
-            <div className="text-gray-500 text-xs">Domain Rating · 0–100</div>
-          </div>
-        </div>
-        {r.dr !== null && <DRBar dr={r.dr} color={r.bandColor} />}
-        {/* Mandatory Ahrefs attribution */}
-        <a
-          href={r.licenseUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 mt-3 text-gray-500 text-xs hover:text-gray-300 transition-colors"
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Domain Rating by{" "}
-          <a href="https://ahrefs.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
-            Ahrefs
+          <DRBar dr={r.dr} color={r.bandColor} />
+          <a
+            href={r.licenseUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 mt-3 text-gray-500 text-xs hover:text-gray-300 transition-colors"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Domain Rating by{" "}
+            <span className="underline">Ahrefs</span>
           </a>
-        </a>
-      </div>
+        </div>
+      ) : (
+        <div className="bg-gray-900/50 border border-gray-700 rounded-2xl px-5 py-4 flex items-center gap-3">
+          <span className="text-gray-500 text-lg">📊</span>
+          <p className="text-gray-400 text-sm">
+            DR score unavailable —{" "}
+            <a href="https://ahrefs.com/" target="_blank" rel="noopener noreferrer" className="text-[#7b93ff] hover:underline">
+              add a free Ahrefs API key
+            </a>{" "}
+            to enable it.
+          </p>
+        </div>
+      )}
 
       {/* AI access summary */}
       <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
