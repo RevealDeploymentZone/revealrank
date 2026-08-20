@@ -1,15 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// ── Signal config ─────────────────────────────────────────────────────────────
+// ── Signal config ──────────────────────────────────────────────────────────────
 
 const FILLER_WORDS = [
+  // Classic AI overused words
   "delve", "tapestry", "crucial", "comprehensive", "robust", "seamless",
   "leverage", "synergy", "transformative", "paramount", "reimagine", "empower",
   "supercharge", "game-changing", "revolutionise", "revolutionize", "unlock",
   "navigate", "realm", "testament", "landscape", "pivotal", "underscore",
   "foster", "myriad", "plethora", "elevate", "harness", "bespoke",
   "innovative", "cutting-edge", "state-of-the-art", "holistic", "dynamic",
-  "proactive", "streamline", "utilize", "utilise", "facilitate", "leverage",
+  "proactive", "streamline", "utilize", "utilise", "facilitate",
+  // Extended AI vocabulary
+  "multifaceted", "nuanced", "intricate", "sophisticated", "tailored",
+  "encompass", "spearhead", "bolster", "augment", "scalable",
+  "actionable", "impactful", "stakeholder", "deliverable", "bandwidth",
+  "insightful", "data-driven", "mission-critical", "value-driven",
+  "overarching", "meticulous", "commendable", "noteworthy", "groundbreaking",
+  "unparalleled", "unrivalled", "unrivaled", "invaluable", "indispensable",
+  "strategically", "optimise", "optimize", "iterative", "agile",
+  "ecosystem", "paradigm", "framework", "methodology", "synergise", "synergize",
+  "ensure", "remain", "navigate", "embark", "endeavour", "endeavor",
 ];
 
 const TRANSITION_WORDS = [
@@ -17,12 +28,15 @@ const TRANSITION_WORDS = [
   "nevertheless", "nonetheless", "subsequently", "accordingly", "thus",
   "hence", "henceforth", "in conclusion", "to summarize", "to summarise",
   "in summary", "overall", "ultimately", "in essence", "it is worth noting",
-  "it is important to note", "it should be noted",
+  "it is important to note", "it should be noted", "first and foremost",
+  "last but not least", "in other words", "that being said", "with that said",
+  "on the other hand", "in light of", "as a result", "due to this",
+  "to this end", "with this in mind", "building on this",
 ];
 
 const AI_PHRASES = [
   /it['']s not just .{1,40}, it['']s/i,
-  /in today['']s (fast-paced|rapidly evolving|ever-changing|digital)/i,
+  /in today['']s (fast-paced|rapidly evolving|ever-changing|digital|competitive)/i,
   /let['']s (dive|delve) in/i,
   /buckle up/i,
   /in conclusion,/i,
@@ -35,6 +49,23 @@ const AI_PHRASES = [
   /\btake your .{1,20} to the next level\b/i,
   /\bin today['']s world\b/i,
   /\bthe (world|landscape|industry) of .{1,30} is (rapidly|constantly|ever)\b/i,
+  // Additional AI patterns
+  /\bin this (article|post|guide|blog|piece)\b/i,
+  /\bwithout further ado\b/i,
+  /\bit goes without saying\b/i,
+  /\bneedless to say\b/i,
+  /\bthe (key|secret|answer) (lies|is) in\b/i,
+  /\bpicture this\b/i,
+  /\bthe bottom line (is|here)\b/i,
+  /\bthink about it\b/i,
+  /\b(here['']s|here is) (the thing|what)\b/i,
+  /\byou (might|may) be wondering\b/i,
+  /\bin a world where\b/i,
+  /\bthe good news is\b/i,
+  /\bthe (bad|great|best) news\b/i,
+  /\bstay tuned\b/i,
+  /\bspoiler alert\b/i,
+  /\blong story short\b/i,
 ];
 
 const HEDGE_PHRASES = [
@@ -46,6 +77,12 @@ const HEDGE_PHRASES = [
   /\btend to\b/i,
   /\bsignificantly (improve|enhance|boost|increase|reduce)\b/i,
   /\b(greatly|vastly|tremendously) (improve|enhance|benefit)\b/i,
+  /\bit (can be|is often|is sometimes) (said|argued|suggested)\b/i,
+  /\bplays? a (key|crucial|vital|important|significant) role\b/i,
+  /\ba wide (range|variety|array) of\b/i,
+  /\bvarious (aspects|factors|elements|components)\b/i,
+  /\bin (many|some|various|numerous) (ways|aspects|situations)\b/i,
+  /\bmore often than not\b/i,
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -75,9 +112,9 @@ function stdDev(arr: number[]): number {
 // ── Analysis ──────────────────────────────────────────────────────────────────
 
 export interface AnalysisResult {
-  score: number;           // 0–100, higher = more likely AI
-  verdict: string;         // "Likely AI" | "Mixed" | "Likely Human"
-  verdictColor: string;    // "red" | "yellow" | "green"
+  score: number;
+  verdict: string;
+  verdictColor: string;
   signals: Signal[];
   highlightedSentences: HighlightedSentence[];
   stats: TextStats;
@@ -85,9 +122,9 @@ export interface AnalysisResult {
 
 export interface Signal {
   name: string;
-  score: number;          // 0–100 contribution to AI likelihood
+  score: number;
   description: string;
-  found: string[];        // specific examples found
+  found: string[];
 }
 
 export interface HighlightedSentence {
@@ -117,9 +154,9 @@ function analyzeText(text: string): AnalysisResult {
   const sentLengths = sentences.map(s => wordCount(s));
   const avgLen      = mean(sentLengths);
   const sd          = stdDev(sentLengths);
-  const cv          = avgLen > 0 ? sd / avgLen : 0; // coefficient of variation
+  const cv          = avgLen > 0 ? sd / avgLen : 0;
   // Low CV = uniform = AI. Human writing CV typically > 0.45
-  const varianceScore = Math.max(0, Math.min(100, Math.round((0.55 - cv) / 0.55 * 100)));
+  const varianceScore = Math.max(0, Math.min(100, Math.round((0.50 - cv) / 0.50 * 100)));
 
   // Sentences with suspiciously similar length to neighbours
   const uniformRuns: string[] = [];
@@ -130,15 +167,22 @@ function analyzeText(text: string): AnalysisResult {
     }
   }
 
+  // ── Average sentence length (AI peaks at 14–22 words) ────────────────────
+  // Human writing is often shorter (<12) or very long. AI clusters 14–22.
+  const distFrom18 = Math.abs(avgLen - 18);
+  const avgLenScore = sentences.length >= 3
+    ? Math.max(0, Math.min(100, Math.round((1 - distFrom18 / 18) * 75)))
+    : 0;
+
   // ── Filler words ──────────────────────────────────────────────────────────
   const fillerFound: string[] = [];
   FILLER_WORDS.forEach(w => {
-    const re = new RegExp(`\\b${w}s?\\b`, "gi");
+    const re = new RegExp(`\\b${w.replace(/-/g, "[-]?")}s?\\b`, "gi");
     const matches = text.match(re);
     if (matches) fillerFound.push(...matches.map(m => m.toLowerCase()));
   });
   const fillerDensity  = words > 0 ? fillerFound.length / words : 0;
-  const fillerScore    = Math.min(100, Math.round(fillerDensity * 1200));
+  const fillerScore    = Math.min(100, Math.round(fillerDensity * 1500));
   const fillerUnique   = [...new Set(fillerFound)].slice(0, 8);
 
   // ── Transition word overuse ───────────────────────────────────────────────
@@ -156,7 +200,7 @@ function analyzeText(text: string): AnalysisResult {
     const m = text.match(re);
     if (m) aiPhraseFound.push(m[0].slice(0, 60));
   });
-  const aiPhraseScore = Math.min(100, aiPhraseFound.length * 25);
+  const aiPhraseScore = Math.min(100, aiPhraseFound.length * 22);
 
   // ── Hedging / vagueness ───────────────────────────────────────────────────
   const hedgeFound: string[] = [];
@@ -164,7 +208,7 @@ function analyzeText(text: string): AnalysisResult {
     const m = text.match(re);
     if (m) hedgeFound.push(m[0].slice(0, 60));
   });
-  const hedgeScore = Math.min(100, hedgeFound.length * 18);
+  const hedgeScore = Math.min(100, hedgeFound.length * 16);
 
   // ── Passive voice ─────────────────────────────────────────────────────────
   const passiveMatches = text.match(/\b(?:is|are|was|were|be|been|being)\s+\w+ed\b/gi) ?? [];
@@ -182,20 +226,21 @@ function analyzeText(text: string): AnalysisResult {
 
   // ── Weighted overall score ────────────────────────────────────────────────
   const score = Math.round(
-    varianceScore  * 0.28 +
-    fillerScore    * 0.20 +
+    varianceScore  * 0.12 +
+    avgLenScore    * 0.13 +
+    fillerScore    * 0.28 +
     aiPhraseScore  * 0.22 +
     transScore     * 0.12 +
-    hedgeScore     * 0.10 +
-    passiveScore   * 0.04 +
-    paraScore      * 0.04
+    hedgeScore     * 0.08 +
+    passiveScore   * 0.03 +
+    paraScore      * 0.02
   );
 
   // ── Verdict ───────────────────────────────────────────────────────────────
   let verdict: string, verdictColor: string;
-  if (score >= 65) { verdict = "Likely AI-Written";   verdictColor = "red";    }
-  else if (score >= 35) { verdict = "Mixed Signals";  verdictColor = "yellow"; }
-  else                  { verdict = "Likely Human";   verdictColor = "green";  }
+  if (score >= 58)      { verdict = "Likely AI-Written";  verdictColor = "red";    }
+  else if (score >= 30) { verdict = "Mixed Signals";      verdictColor = "yellow"; }
+  else                  { verdict = "Likely Human";       verdictColor = "green";  }
 
   // ── Highlighted sentences ─────────────────────────────────────────────────
   const highlightedSentences: HighlightedSentence[] = [];
@@ -212,7 +257,7 @@ function analyzeText(text: string): AnalysisResult {
     }
 
     // Multiple filler words in one sentence
-    const sentFiller = FILLER_WORDS.filter(w => new RegExp(`\\b${w}s?\\b`, "i").test(s));
+    const sentFiller = FILLER_WORDS.filter(w => new RegExp(`\\b${w.replace(/-/g, "[-]?")}s?\\b`, "i").test(s));
     if (sentFiller.length >= 2) {
       highlightedSentences.push({ text: s, reason: `Contains filler words: ${sentFiller.slice(0, 3).join(", ")}`, severity: "high" });
       return;
@@ -233,12 +278,6 @@ function analyzeText(text: string): AnalysisResult {
   // ── Signals array ─────────────────────────────────────────────────────────
   const signals: Signal[] = [
     {
-      name: "Sentence length uniformity",
-      score: varianceScore,
-      description: `Coefficient of variation: ${cv.toFixed(2)}. Human writing typically varies more (CV > 0.45). AI output tends to cluster around a similar length.`,
-      found: uniformRuns.slice(0, 3),
-    },
-    {
       name: "AI filler vocabulary",
       score: fillerScore,
       description: `Found ${fillerFound.length} filler word instance${fillerFound.length !== 1 ? "s" : ""} across ${words} words. These words appear disproportionately in AI output.`,
@@ -251,6 +290,12 @@ function analyzeText(text: string): AnalysisResult {
       found: aiPhraseFound.slice(0, 5),
     },
     {
+      name: "Sentence length uniformity",
+      score: varianceScore,
+      description: `Coefficient of variation: ${cv.toFixed(2)}. Human writing typically varies more (CV > 0.45). AI output tends to cluster around a similar length.`,
+      found: uniformRuns.slice(0, 3),
+    },
+    {
       name: "Transition word overuse",
       score: transScore,
       description: "AI models frequently use moreover, furthermore, additionally, consequently — chaining paragraphs in a way human writers avoid.",
@@ -259,7 +304,7 @@ function analyzeText(text: string): AnalysisResult {
     {
       name: "Vague hedging language",
       score: hedgeScore,
-      description: 'Phrases like "generally speaking", "in many cases", "significantly improve" — AI fills gaps with unfalsifiable claims.',
+      description: 'Phrases like "generally speaking", "plays a key role", "a wide range of" — AI fills gaps with unfalsifiable claims.',
       found: hedgeFound.slice(0, 4),
     },
   ];
