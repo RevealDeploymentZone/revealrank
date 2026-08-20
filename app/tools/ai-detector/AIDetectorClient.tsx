@@ -113,7 +113,7 @@ export default function AIDetectorClient() {
     setError(null);
     setResult(null);
     try {
-      const res = await fetch("/api/ai-detector", {
+      const res = await fetch("/api/ai-detector/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
