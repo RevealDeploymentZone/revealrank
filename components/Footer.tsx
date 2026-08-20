@@ -84,6 +84,12 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <h3 className="text-gray-900 font-bold mb-4 text-xs uppercase tracking-widest">AI Visibility</h3>
+            <ul className="space-y-2 mb-6">
+              <li><Link href="/ai-visibility" className="text-gray-500 hover:text-gray-900 text-sm transition-colors">AI Visibility Hub</Link></li>
+              <li><Link href="/ai-citation-programme" className="text-[#4361ee] hover:text-blue-700 text-sm font-semibold transition-colors">AI Citation Programme</Link></li>
+              <li><Link href="/blog/generative-engine-optimization" className="text-gray-500 hover:text-gray-900 text-sm transition-colors">GEO Guide</Link></li>
+            </ul>
             <h3 className="text-gray-900 font-bold mb-4 text-xs uppercase tracking-widest">Company</h3>
             <ul className="space-y-2">
               <li><Link href="/about" className="text-gray-500 hover:text-gray-900 text-sm transition-colors">About Us</Link></li>
