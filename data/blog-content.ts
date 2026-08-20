@@ -4193,6 +4193,7 @@ Sitemap: https://www.revealrank.com/sitemap.xml
   <a href="/contact/" style="display:inline-block;background:white;color:#4361ee;font-weight:800;font-size:0.9rem;padding:12px 24px;border-radius:50px;text-decoration:none;">Request Your Free Audit →</a>
 </div>
 `,
+};
 
 export function getBlogContent(slug: string): string | null {
   return blogContent[slug] ?? null;
