@@ -10,19 +10,33 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    try {
-      const res = await fetch("/api/contact/", {
-        method: "POST",
-        body: data,
-      });
-      const json = await res.json();
-      if (json.success) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch {
+    // Email copy of the lead (posted from the browser, FormSubmit blocks server-side requests)
+    const emailData = new FormData(form);
+    emailData.append("_subject", "New Reveal Rank enquiry");
+    emailData.append("_template", "table");
+    emailData.append("_captcha", "false");
+    const emailSent = fetch("https://formsubmit.co/ajax/manmeetsingh0177@gmail.com", {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: emailData,
+    })
+      .then((r) => r.ok)
+      .catch(() => false);
+
+    // GitHub issue copy of the lead (server route)
+    const issueCreated = fetch("/api/contact/", {
+      method: "POST",
+      body: data,
+    })
+      .then(async (r) => (await r.json()).success === true)
+      .catch(() => false);
+
+    // Show success if the lead reached at least one place, so no lead is lost
+    const [emailOk, issueOk] = await Promise.all([emailSent, issueCreated]);
+    if (emailOk || issueOk) {
+      setStatus("success");
+      form.reset();
+    } else {
       setStatus("error");
     }
   }
