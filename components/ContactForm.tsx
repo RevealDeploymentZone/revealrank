@@ -19,6 +19,7 @@ export default function ContactForm() {
       method: "POST",
       headers: { Accept: "application/json" },
       body: emailData,
+      signal: AbortSignal.timeout(6000),
     })
       .then((r) => r.ok)
       .catch(() => false);
@@ -31,9 +32,10 @@ export default function ContactForm() {
       .then(async (r) => (await r.json()).success === true)
       .catch(() => false);
 
-    // Show success if the lead reached at least one place, so no lead is lost
-    const [emailOk, issueOk] = await Promise.all([emailSent, issueCreated]);
-    if (emailOk || issueOk) {
+    // Show success as soon as the lead is saved; only wait for the email request (max 6s) if saving failed
+    const issueOk = await issueCreated;
+    const delivered = issueOk || (await emailSent);
+    if (delivered) {
       setStatus("success");
       form.reset();
     } else {
